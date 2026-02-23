@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cilt Bakımı — Harmony Lux Beauty</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c1: #F8FAFC;
+    --c2: #D9EAFD;
+    --c3: #BCCCDC;
+    --c4: #9AA6B2;
+    --dark: #1e2d38;
+    --mid: #3d5260;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--c1);
+    color: var(--dark);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 500;
+    padding: 1.6rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(248,250,252,0.92);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 var(--c3);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .logo em { font-style: italic; color: var(--c4); }
+
+  nav ul { list-style: none; display: flex; gap: 3rem; }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 2px;
+    border-radius: 999px;
+    border: 1px solid var(--c3);
+    background: rgba(248,250,252,0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    color: var(--mid);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  .lang-btn.active {
+    background: var(--dark);
+    color: var(--c1);
+  }
+
+  nav ul a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 1px;
+    background: var(--c4);
+    transition: width 0.3s;
+  }
+
+  nav ul a:hover::after { width: 100%; }
+
+  .hero-detail {
+    padding: 10rem 5rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--c4);
+    text-decoration: none;
+    margin-bottom: 3rem;
+    transition: color 0.3s;
+  }
+
+  .back-link:hover { color: var(--dark); }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  h1 em { font-style: italic; color: var(--c4); }
+
+  .intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--mid);
+    margin-bottom: 4rem;
+    max-width: 800px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .service-item {
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid var(--c3);
+    transition: all 0.3s;
+  }
+
+  .service-item:hover {
+    box-shadow: 0 10px 40px rgba(154,166,178,0.2);
+    transform: translateY(-5px);
+  }
+
+  .service-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .service-item p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .price {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c4);
+    font-weight: 400;
+  }
+
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+  }
+
+  .whatsapp-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+  }
+
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+    }
+
+    nav ul {
+      display: none;
+    }
+
+    .nav-right {
+      margin-left: auto;
+    }
+
+    .hero-detail {
+      padding: 8rem 1.5rem 3rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    .intro {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .content-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-item {
+      padding: 2rem;
+    }
+
+    .whatsapp-btn {
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .whatsapp-btn svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .service-item h3 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="beauty-center.html" class="logo">Harmony Lux <em>Beauty</em></a>
+  <div class="nav-right">
+    <ul>
+      <li><a href="beauty-center.html#services" data-i18n="nav.services">Hizmetler</a></li>
+      <li><a href="beauty-center.html#about" data-i18n="nav.about">Hakkımızda</a></li>
+      <li><a href="beauty-center.html#team" data-i18n="nav.team">Ekip</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button class="lang-btn active" type="button" data-lang="tr">TR</button>
+      <button class="lang-btn" type="button" data-lang="en">EN</button>
+      <button class="lang-btn" type="button" data-lang="ru">RU</button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-detail">
+  <a href="beauty-center.html#services" class="back-link" data-i18n="detail.back">← Geri Dön</a>
+  
+  <h1 data-i18n="detail.title">Cilt <em>Bakımı</em></h1>
+  
+  <p class="intro" data-i18n="detail.intro">
+    Cildiniz, güzelliğinizin en önemli yansımasıdır. Harmony Lux Beauty'de, doğal bileşenler ve son teknoloji cihazlarla 
+    cildinize özel bakım protokolleri uyguluyoruz. Her cilt tipi için özel olarak tasarlanmış tedavilerimizle, 
+    cildinizin doğal parlaklığını ve sağlığını geri kazanmasına yardımcı oluyoruz.
+  </p>
+
+  <div class="content-grid">
+    <div class="service-item">
+      <h3 data-i18n="item1.title">Hydrafacial</h3>
+      <p data-i18n="item1.desc">Cildinizi derinlemesine temizleyen, nemlendiren ve canlandıran yeni nesil cilt bakımı. Anında görünen sonuçlar.</p>
+      <div class="price" data-i18n="item1.price">₺650</div>
+    </div>
+  
+    <div class="service-item">
+      <h3 data-i18n="item2.title">Klasik Cilt Bakımı</h3>
+      <p data-i18n="item2.desc">Temizlik, peeling, maske ve nemlendirme aşamalarını içeren temel cilt bakımı. Tüm cilt tipleri için uygundur.</p>
+      <div class="price" data-i18n="item2.price">₺450</div>
+    </div>
+  
+    <div class="service-item">
+      <h3 data-i18n="item3.title">Altın Yüz Bakımı</h3>
+      <p data-i18n="item3.desc">24 ayar altın içeren lüks bakım. Cildi sıkılaştırır, parlaklık verir ve yaşlanma belirtilerini azaltır.</p>
+      <div class="price" data-i18n="item3.price">₺1.200</div>
+    </div>
+  
+    <div class="service-item">
+      <h3 data-i18n="item4.title">Kimyasal Peeling</h3>
+      <p data-i18n="item4.desc">Cilt yüzeyindeki ölü hücreleri temizleyerek cildin yenilenmesini sağlar. Leke ve akne izleri için etkilidir.</p>
+      <div class="price" data-i18n="item4.price">₺800</div>
+    </div>
+  
+    <div class="service-item">
+      <h3 data-i18n="item5.title">Mezoterapi</h3>
+      <p data-i18n="item5.desc">Cilde vitamin, mineral ve antioksidan enjeksiyonu. Cildin nem dengesini düzenler ve gençleştirir.</p>
+      <div class="price" data-i18n="item5.price">₺950</div>
+    </div>
+  
+    <div class="service-item">
+      <h3 data-i18n="item6.title">Oksijen Terapisi</h3>
+      <p data-i18n="item6.desc">Yüksek basınçlı oksijen ile cildin derinliklerine vitamin ve serum iletimi. Anında tazelik ve canlılık.</p>
+      <div class="price" data-i18n="item6.price">₺750</div>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/905369343003" target="_blank" class="whatsapp-btn" aria-label="WhatsApp ile iletişime geç">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+  </svg>
+</a>
+
+<script>
+  const translations = {
+    tr: {
+      'nav.services': 'Hizmetler',
+      'nav.about': 'Hakkımızda',
+      'nav.team': 'Ekip',
+
+      'detail.back': '← Geri Dön',
+      'detail.title': 'Cilt <em>Bakımı</em>',
+      'detail.intro': 'Cildiniz, güzelliğinizin en önemli yansımasıdır. Harmony Lux Beauty\'de, doğal bileşenler ve son teknoloji cihazlarla cildinize özel bakım protokolleri uyguluyoruz. Her cilt tipi için özel olarak tasarlanmış tedavilerimizle, cildinizin doğal parlaklığını ve sağlığını geri kazanmasına yardımcı oluyoruz.',
+
+      'item1.title': 'Hydrafacial',
+      'item1.desc': 'Cildinizi derinlemesine temizleyen, nemlendiren ve canlandıran yeni nesil cilt bakımı. Anında görünen sonuçlar.',
+      'item1.price': '₺650',
+
+      'item2.title': 'Klasik Cilt Bakımı',
+      'item2.desc': 'Temizlik, peeling, maske ve nemlendirme aşamalarını içeren temel cilt bakımı. Tüm cilt tipleri için uygundur.',
+      'item2.price': '₺450',
+
+      'item3.title': 'Altın Yüz Bakımı',
+      'item3.desc': '24 ayar altın içeren lüks bakım. Cildi sıkılaştırır, parlaklık verir ve yaşlanma belirtilerini azaltır.',
+      'item3.price': '₺1.200',
+
+      'item4.title': 'Kimyasal Peeling',
+      'item4.desc': 'Cilt yüzeyindeki ölü hücreleri temizleyerek cildin yenilenmesini sağlar. Leke ve akne izleri için etkilidir.',
+      'item4.price': '₺800',
+
+      'item5.title': 'Mezoterapi',
+      'item5.desc': 'Cilde vitamin, mineral ve antioksidan enjeksiyonu. Cildin nem dengesini düzenler ve gençleştirir.',
+      'item5.price': '₺950',
+
+      'item6.title': 'Oksijen Terapisi',
+      'item6.desc': 'Yüksek basınçlı oksijen ile cildin derinliklerine vitamin ve serum iletimi. Anında tazelik ve canlılık.',
+      'item6.price': '₺750'
+    },
+    en: {
+      'nav.services': 'Services',
+      'nav.about': 'About',
+      'nav.team': 'Team',
+
+      'detail.back': '← Back',
+      'detail.title': 'Facial <em>Treatments</em>',
+      'detail.intro': 'Your skin is the most important reflection of your beauty. At Harmony Lux Beauty we combine natural ingredients with state-of-the-art devices to create bespoke treatment protocols for your skin. With programs tailored to every skin type, we help restore your skin’s natural radiance and health.',
+
+      'item1.title': 'Hydrafacial',
+      'item1.desc': 'A new generation facial that deeply cleanses, hydrates and revitalizes your skin. Visible results immediately after the session.',
+      'item1.price': '₺650',
+
+      'item2.title': 'Classic Facial',
+      'item2.desc': 'Essential skincare including cleansing, peeling, mask and hydration steps. Suitable for all skin types.',
+      'item2.price': '₺450',
+
+      'item3.title': 'Gold Facial',
+      'item3.desc': 'A luxurious treatment enriched with 24k gold. Firms the skin, adds radiance and softens signs of aging.',
+      'item3.price': '₺1.200',
+
+      'item4.title': 'Chemical Peeling',
+      'item4.desc': 'Removes dead cells from the skin surface and stimulates renewal. Effective for spots and acne marks.',
+      'item4.price': '₺800',
+
+      'item5.title': 'Mesotherapy',
+      'item5.desc': 'Injection of vitamins, minerals and antioxidants into the skin. Balances moisture and promotes rejuvenation.',
+      'item5.price': '₺950',
+
+      'item6.title': 'Oxygen Therapy',
+      'item6.desc': 'High-pressure oxygen delivery of vitamins and serums into the deeper layers of the skin for instant freshness and glow.',
+      'item6.price': '₺750'
+    },
+    ru: {
+      'nav.services': 'Услуги',
+      'nav.about': 'О нас',
+      'nav.team': 'Команда',
+
+      'detail.back': '← Назад',
+      'detail.title': 'Уход за <em>Кожей</em>',
+      'detail.intro': 'Кожа — главное отражение вашей красоты. В Harmony Lux Beauty мы используем натуральные ингредиенты и современное оборудование, чтобы подбирать индивидуальные протоколы ухода. Наши программы для разных типов кожи помогают вернуть естественное сияние и здоровье.',
+
+      'item1.title': 'Hydrafacial',
+      'item1.desc': 'Уход нового поколения, который глубоко очищает, увлажняет и освежает кожу. Видимый эффект сразу после процедуры.',
+      'item1.price': '₺650',
+
+      'item2.title': 'Классический уход',
+      'item2.desc': 'Базовый уход, включающий очищение, пилинг, маску и увлажнение. Подходит для всех типов кожи.',
+      'item2.price': '₺450',
+
+      'item3.title': 'Золотой уход для лица',
+      'item3.desc': 'Роскошная процедура с использованием 24‑каратного золота. Укрепляет кожу, придаёт ей сияние и уменьшает признаки старения.',
+      'item3.price': '₺1.200',
+
+      'item4.title': 'Химический пилинг',
+      'item4.desc': 'Удаляет отмершие клетки с поверхности кожи и запускает процесс обновления. Эффективен при пигментации и следах акне.',
+      'item4.price': '₺800',
+
+      'item5.title': 'Мезотерапия',
+      'item5.desc': 'Введение комплексов витаминов, минералов и антиоксидантов. Нормализует уровень увлажнённости и омолаживает кожу.',
+      'item5.price': '₺950',
+
+      'item6.title': 'Кислородная терапия',
+      'item6.desc': 'Подача витаминов и сывороток в глубокие слои кожи под давлением кислорода. Мгновенная свежесть и сияние.',
+      'item6.price': '₺750'
+    }
+  };
+
+  const langButtons = document.querySelectorAll('.lang-btn');
+
+  function setLanguage(lang) {
+    const dict = translations[lang];
+    if (!dict) return;
+
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const value = dict[key];
+      if (value) {
+        el.innerHTML = value;
+      }
+    });
+
+    langButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    try {
+      localStorage.setItem('hlx-lang', lang);
+    } catch (e) {}
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setLanguage(btn.dataset.lang);
+    });
+  });
+
+  let initialLang = 'tr';
+  try {
+    const saved = localStorage.getItem('hlx-lang');
+    if (saved && translations[saved]) {
+      initialLang = saved;
+    }
+  } catch (e) {}
+
+  setLanguage(initialLang);
+</script>
+
+</body>
+</html>
