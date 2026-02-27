@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Harmony Lux Beauty — Güzellik Merkezi</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --c1: #F8FAFC;
@@ -25,29 +25,6 @@
     font-weight: 400;
     line-height: 1.6;
     overflow-x: hidden;
-    cursor: none;
-  }
-
-  .cursor {
-    position: fixed;
-    width: 10px; height: 10px;
-    background: var(--c4);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-  }
-
-  .cursor-ring {
-    position: fixed;
-    width: 36px; height: 36px;
-    border: 1px solid var(--c4);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: transform 0.18s ease;
-    opacity: 0.6;
   }
 
   .progress-bar {
@@ -66,8 +43,9 @@
     z-index: 500;
     padding: 1.6rem 5rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
     transition: all 0.5s;
   }
 
@@ -76,6 +54,15 @@
     backdrop-filter: blur(20px);
     padding: 1rem 5rem;
     box-shadow: 0 1px 0 var(--c3);
+  }
+
+  nav .nav-left { order: 2; }
+  nav .logo { order: 1; }
+  nav .nav-right {
+    position: absolute;
+    right: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .logo {
@@ -118,7 +105,6 @@
     text-transform: uppercase;
     padding: 0.25rem 0.7rem;
     border-radius: 999px;
-    cursor: none;
     transition: background 0.25s, color 0.25s;
   }
 
@@ -157,7 +143,6 @@
     font-size: 0.75rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    cursor: none;
     position: relative;
     overflow: hidden;
     transition: color 0.4s;
@@ -203,15 +188,22 @@
 
   .hero-content {
     position: relative; z-index: 2;
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
     width: 100%; min-height: 100vh;
-    padding-top: 90px;
+    padding-top: 90px; padding-bottom: 5rem;
+    gap: 3rem;
   }
 
   .hero-left {
-    padding: 5rem 4rem 5rem 5rem;
-    display: flex; flex-direction: column; justify-content: center;
+    padding: 2rem 4rem;
+    max-width: 580px;
+    text-align: left;
   }
+
+  .hero-left .hero-ctas { justify-content: flex-start; }
+  .hero-left .hero-tag { justify-content: flex-start; }
 
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.8rem;
@@ -231,12 +223,12 @@
     opacity: 0; animation: slideIn 0.9s 0.4s forwards;
   }
 
-  .hero-h1 .l2 { display: block; text-indent: 4.5rem; }
-  .hero-h1 .l3 { display: block; font-style: italic; color: var(--c4); text-indent: 9rem; }
+  .hero-h1 .l2 { display: block; }
+  .hero-h1 .l3 { display: block; font-style: italic; color: var(--c4); }
 
   .hero-desc {
     font-size: 1rem; line-height: 1.9; color: var(--mid);
-    max-width: 420px; margin-bottom: 3.5rem;
+    max-width: 480px; margin-bottom: 3.5rem;
     opacity: 0; animation: slideIn 1s 0.6s forwards;
   }
 
@@ -247,12 +239,16 @@
 
   .btn-primary {
     position: relative; overflow: hidden;
-    background: var(--dark); color: var(--c1); border: none;
+    background: var(--dark); color: var(--c1) !important; border: none;
     padding: 1.1rem 2.8rem;
     font-family: 'Jost', sans-serif; font-size: 0.78rem;
     letter-spacing: 0.22em; text-transform: uppercase;
-    cursor: none; transition: all 0.4s;
+    transition: all 0.4s;
+    display: inline-flex; align-items: center; justify-content: center;
+    text-decoration: none;
   }
+
+  .btn-primary:hover { color: var(--c1) !important; }
 
   .btn-primary::after {
     content: ''; position: absolute; inset: 0;
@@ -266,7 +262,7 @@
   .link-arrow {
     display: flex; align-items: center; gap: 0.6rem;
     font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--mid); text-decoration: none; cursor: none;
+    color: var(--mid); text-decoration: none;
     transition: gap 0.3s, color 0.3s;
   }
 
@@ -404,11 +400,12 @@
   /* SERVICES */
   .services {
     padding: 9rem 5rem; position: relative; overflow: hidden;
+    text-align: center;
   }
 
   .services::before {
     content: 'HİZMET'; position: absolute;
-    top: 2rem; right: 2rem;
+    top: 2rem; left: 50%; transform: translateX(-50%);
     font-family: 'Playfair Display', serif;
     font-size: 11rem; font-weight: 300;
     color: var(--c2); pointer-events: none; line-height: 1;
@@ -416,8 +413,10 @@
 
   .sec-tag {
     font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
-    color: var(--c4); display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+    color: var(--c4); display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;
   }
+
+  .services .sec-h { text-align: center; }
 
   .sec-tag::before, .sec-tag::after { content: ''; width: 30px; height: 1px; background: var(--c3); }
 
@@ -430,14 +429,14 @@
   .sec-h em { font-style: italic; color: var(--c4); }
 
   .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
+    display: grid; grid-template-columns: repeat(5, 1fr);
     gap: 1.5px; background: var(--c3); border: 1.5px solid var(--c3);
   }
 
   .svc {
     background: var(--c1); padding: 3rem 2.5rem 3.5rem;
     position: relative; overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); cursor: none;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .svc::before {
@@ -539,7 +538,7 @@
 
   .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2.5rem; margin-top: 5rem; position: relative; z-index: 1; }
 
-  .team-card { cursor: none; }
+  .team-card { cursor: pointer; }
 
   .team-img { width: 100%; aspect-ratio: 3/4; position: relative; overflow: hidden; margin-bottom: 1.5rem; }
 
@@ -698,7 +697,7 @@
 
   .footer-top {
     padding: 5rem 5rem 3rem;
-    display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr;
     gap: 4rem; border-bottom: 1px solid rgba(154,166,178,0.15);
   }
 
@@ -712,7 +711,7 @@
   .sb {
     width: 36px; height: 36px; border: 1px solid rgba(154,166,178,0.3);
     display: flex; align-items: center; justify-content: center;
-    font-size: 0.75rem; color: var(--c4); cursor: none; transition: all 0.3s;
+    font-size: 0.75rem; color: var(--c4); transition: all 0.3s;
     font-family: 'Playfair Display', serif; font-style: italic;
   }
 
@@ -724,7 +723,7 @@
 
   .fc ul li {
     margin-bottom: 1rem; font-size: 0.83rem;
-    color: rgba(154,166,178,0.6); cursor: none;
+    color: rgba(154,166,178,0.6);
     transition: color 0.3s; letter-spacing: 0.03em;
   }
 
@@ -751,61 +750,130 @@
   ::-webkit-scrollbar-track { background: var(--c1); }
   ::-webkit-scrollbar-thumb { background: var(--c3); }
 
+  @media (max-width: 1200px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-content { gap: 2rem; }
+    .hero-left { padding: 2rem 2rem; }
+    .hero-visual { width: 320px; height: 400px; }
+  }
+
+  @media (max-width: 900px) {
+    .hero-right { display: none !important; }
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      justify-items: center;
+    }
+    .hero-left {
+      text-align: center;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-left .hero-ctas { justify-content: center; align-items: center; }
+    .hero-left .hero-tag { justify-content: center; }
+    .hero-desc { margin-left: auto; margin-right: auto; text-align: center; }
+    .hero-h1 { text-align: center; }
+  }
+
   /* MOBILE RESPONSIVE */
   @media (max-width: 768px) {
     nav {
       padding: 1rem 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     nav.scrolled {
       padding: 0.8rem 1.5rem;
     }
 
-    .logo {
-      font-size: 1.3rem;
+    nav .logo {
+      order: 1;
+    }
+
+    nav .nav-left {
+      order: 2;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav .nav-right {
+      order: 3;
+      position: static;
+      transform: none;
     }
 
     nav ul {
-      display: none;
+      justify-content: center;
+      gap: 2rem;
     }
 
-    .nav-right {
-      margin-left: auto;
+    .lang-switch {
+      padding: 3px;
+    }
+
+    .lang-btn {
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
     }
 
     .hero-content {
       grid-template-columns: 1fr;
-      padding-top: 70px;
+      padding-top: 120px;
+      text-align: center;
+      justify-items: center;
     }
 
     .hero-left {
-      padding: 3rem 1.5rem;
+      padding: 2rem 1.5rem;
+      max-width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-left .hero-ctas {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-left .hero-tag {
+      justify-content: center;
+    }
+
+    .hero-desc {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
     }
 
     .hero-h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
+      text-align: center;
     }
 
-    .hero-h1 .l2 {
-      text-indent: 2rem;
-    }
-
-    .hero-h1 .l3 {
-      text-indent: 4rem;
-    }
+    .hero-h1 .l2 { text-indent: 0; }
+    .hero-h1 .l3 { text-indent: 0; }
 
     .hero-ctas {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     }
 
     .hero-right {
-      padding: 2rem 1.5rem;
+      padding: 1rem 1.5rem;
+      display: none;
     }
 
     .hero-visual {
-      width: 280px;
-      height: 360px;
+      width: 240px;
+      height: 300px;
+      margin: 0 auto;
     }
 
     .float-card {
@@ -855,17 +923,9 @@
       min-height: 300px;
     }
 
-    .team {
-      padding: 5rem 1.5rem;
-    }
-
-    .team::after {
-      font-size: 7rem;
-    }
-
-    .team-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+    .nav-right {
+      position: static;
+      transform: none;
     }
 
     .machines-grid {
@@ -915,32 +975,72 @@
       font-size: 3rem;
     }
 
-    .team-grid {
-      grid-template-columns: 1fr;
-    }
-
     .btn-primary {
       padding: 1rem 2rem;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+    }
+
+    .marquee-strip {
+      padding: 0.8rem 0;
+    }
+
+    .mi {
+      font-size: 1rem;
+    }
+
+    .stat-item {
+      padding: 2rem 1rem;
+    }
+
+    .stat-num {
+      font-size: 2.8rem;
+    }
+
+    .svc-name {
+      font-size: 1.5rem;
+    }
+
+    .svc-desc {
+      font-size: 0.88rem;
+    }
+
+    .about-left {
+      padding: 4rem 1.5rem;
+    }
+
+    .testimonial {
+      padding: 4rem 1.5rem;
+    }
+
+    .t-quote {
+      font-size: 1.25rem;
     }
   }
 </style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 <div class="progress-bar" id="pbar"></div>
 
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="logo">Harmony Lux <em>Beauty</em></a>
-  <div class="nav-right">
+  <div class="nav-left">
     <ul>
       <li><a href="#services" data-i18n="nav.services">Hizmetler</a></li>
       <li><a href="#about" data-i18n="nav.about">Hakkımızda</a></li>
-      <li><a href="#team" data-i18n="nav.team">Ekip</a></li>
     </ul>
+  </div>
+  <div class="nav-right">
     <div class="lang-switch">
       <button class="lang-btn active" type="button" data-lang="tr">TR</button>
       <button class="lang-btn" type="button" data-lang="en">EN</button>
@@ -972,12 +1072,11 @@
         Her müşterimize özgü deneyimler tasarlıyor, doğal güzelliğinizi en ince ayrıntıya kadar ortaya çıkarıyoruz. Kendinizi en iyi hissettiğiniz yere hoşgeldiniz.
       </p>
       <div class="hero-ctas">
-        <button class="btn-primary"><span data-i18n="hero.cta">Randevu Al</span></button>
+        <a href="https://wa.me/905369343003" target="_blank" class="btn-primary"><span data-i18n="hero.cta">Randevu Al</span></a>
         <a href="#services" class="link-arrow"><span class="arr"></span> <span data-i18n="hero.link">Hizmetleri Keşfet</span></a>
       </div>
     </div>
-
-    <div class="hero-right">
+    <div class="hero-right" style="display:flex">
       <div class="hero-visual">
         <div class="petal p1"></div>
         <div class="petal p2"></div>
@@ -1000,17 +1099,15 @@
 <div class="marquee-strip">
   <div class="marquee-track">
     <span class="mi"><span data-i18n="marquee.skin">Cilt Bakımı</span> <span class="md"></span></span>
-    <span class="mi"><span data-i18n="marquee.hair">Saç Tasarımı</span> <span class="md"></span></span>
+    <span class="mi"><span data-i18n="marquee.hair">Lazer Epilasyon(Bayan)</span> <span class="md"></span></span>
     <span class="mi"><span data-i18n="marquee.massage">Masaj &amp; Terapi</span> <span class="md"></span></span>
-    <span class="mi"><span data-i18n="marquee.makeup">Kalıcı Makyaj</span> <span class="md"></span></span>
-    <span class="mi"><span data-i18n="marquee.epilation">Epilasyon</span> <span class="md"></span></span>
-    <span class="mi"><span data-i18n="marquee.nails">Tırnak Bakımı</span> <span class="md"></span></span>
+    <span class="mi"><span data-i18n="marquee.makeup">Lazer Epilasyon(Erkek)</span> <span class="md"></span></span>
+    <span class="mi"><span data-i18n="marquee.emslimfit">Emslimfit</span> <span class="md"></span></span>
     <span class="mi"><span data-i18n="marquee.skin">Cilt Bakımı</span> <span class="md"></span></span>
-    <span class="mi"><span data-i18n="marquee.hair">Saç Tasarımı</span> <span class="md"></span></span>
+    <span class="mi"><span data-i18n="marquee.hair">Lazer Epilasyon(Bayan)</span> <span class="md"></span></span>
     <span class="mi"><span data-i18n="marquee.massage">Masaj &amp; Terapi</span> <span class="md"></span></span>
-    <span class="mi"><span data-i18n="marquee.makeup">Kalıcı Makyaj</span> <span class="md"></span></span>
-    <span class="mi"><span data-i18n="marquee.epilation">Epilasyon</span> <span class="md"></span></span>
-    <span class="mi"><span data-i18n="marquee.nails">Tırnak Bakımı</span> <span class="md"></span></span>
+    <span class="mi"><span data-i18n="marquee.makeup">Lazer Epilasyon(Erkek)</span> <span class="md"></span></span>
+    <span class="mi"><span data-i18n="marquee.emslimfit">Emslimfit</span> <span class="md"></span></span>
   </div>
 </div>
 
@@ -1045,42 +1142,35 @@
       <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
       <div class="svc-name" data-i18n="services.skin.name">Cilt Bakımı</div>
       <p class="svc-desc" data-i18n="services.skin.desc">Doğal bileşenler ve ileri teknolojilerle cildinizi yenileyin. Kişiye özel bakım protokolleri.</p>
-      <div class="svc-footer"><div class="svc-price" data-i18n="services.skin.price">₺450'den itibaren</div><div class="svc-arr">→</div></div>
+      <div class="svc-footer"><span class="svc-price" data-i18n="services.skin.price">Fiyat için randevu alın</span><div class="svc-arr">→</div></div>
     </a>
-    <a href="sac-tasarimi.html" class="svc reveal rd1" style="text-decoration: none; color: inherit;">
+    <a href="lazer-epilasyon.html" class="svc reveal rd1" style="text-decoration: none; color: inherit;">
       <div class="svc-n">02</div>
-      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2c0 0-4 4-4 9a4 4 0 0 0 8 0c0-5-4-9-4-9z"/><line x1="12" y1="15" x2="12" y2="20"/><line x1="9" y1="20" x2="15" y2="20"/></svg></div>
-      <div class="svc-name" data-i18n="services.hair.name">Saç Tasarımı</div>
-      <p class="svc-desc" data-i18n="services.hair.desc">Uzman stilistlerimizle hayalinizdeki saça kavuşun. Kesim, renk ve bakım hizmetleri.</p>
-      <div class="svc-footer"><div class="svc-price" data-i18n="services.hair.price">₺350'den itibaren</div><div class="svc-arr">→</div></div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44l-1.5-8.5A2.5 2.5 0 0 1 8 8h1.5"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44l1.5-8.5A2.5 2.5 0 0 0 16 8h-1.5"/></svg></div>
+      <div class="svc-name" data-i18n="services.hair.name">Lazer Epilasyon(Bayan)</div>
+      <p class="svc-desc" data-i18n="services.hair.desc">Son teknoloji lazer yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.</p>
+      <div class="svc-footer"><div class="svc-price" data-i18n="services.hair.price">₺300'den itibaren</div><div class="svc-arr">→</div></div>
     </a>
     <a href="masaj-terapi.html" class="svc reveal rd2" style="text-decoration: none; color: inherit;">
       <div class="svc-n">03</div>
       <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v5"/><path d="M4 11h16v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8z"/></svg></div>
       <div class="svc-name" data-i18n="services.massage.name">Masaj &amp; Terapi</div>
       <p class="svc-desc" data-i18n="services.massage.desc">Stresden arının, vücudunuzu yenileyin. Profesyonel masaj ve holistik terapi seçenekleri.</p>
-      <div class="svc-footer"><div class="svc-price" data-i18n="services.massage.price">₺600'den itibaren</div><div class="svc-arr">→</div></div>
+      <div class="svc-footer"><div class="svc-price" data-i18n="services.massage.price">₺1.800'den itibaren</div><div class="svc-arr">→</div></div>
     </a>
-    <a href="kalici-makyaj.html" class="svc reveal rd1" style="text-decoration: none; color: inherit;">
+    <a href="lazer-epilasyon-erkek.html" class="svc reveal rd1" style="text-decoration: none; color: inherit;">
       <div class="svc-n">04</div>
-      <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-      <div class="svc-name" data-i18n="services.makeup.name">Kalıcı Makyaj</div>
-      <p class="svc-desc" data-i18n="services.makeup.desc">Mikroblading ve kalıcı uygulamalarla her sabah mükemmel görünüme kavuşun.</p>
-      <div class="svc-footer"><div class="svc-price" data-i18n="services.makeup.price">₺800'den itibaren</div><div class="svc-arr">→</div></div>
-    </a>
-    <a href="lazer-epilasyon.html" class="svc reveal rd2" style="text-decoration: none; color: inherit;">
-      <div class="svc-n">05</div>
       <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44l-1.5-8.5A2.5 2.5 0 0 1 8 8h1.5"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44l1.5-8.5A2.5 2.5 0 0 0 16 8h-1.5"/></svg></div>
-      <div class="svc-name" data-i18n="services.epilation.name">Lazer Epilasyon</div>
-      <p class="svc-desc" data-i18n="services.epilation.desc">Son teknoloji lazer ve IPL yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.</p>
-      <div class="svc-footer"><div class="svc-price" data-i18n="services.epilation.price">₺200'den itibaren</div><div class="svc-arr">→</div></div>
+      <div class="svc-name" data-i18n="services.makeup.name">Lazer Epilasyon(Erkek)</div>
+      <p class="svc-desc" data-i18n="services.makeup.desc">Son teknoloji lazer yöntemleriyle erkeklere özel epilasyon deneyimi.</p>
+      <div class="svc-footer"><div class="svc-price" data-i18n="services.makeup.price">₺300'den itibaren</div><div class="svc-arr">→</div></div>
     </a>
-    <a href="tirnak-bakimi.html" class="svc reveal rd3" style="text-decoration: none; color: inherit;">
-      <div class="svc-n">06</div>
-      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-      <div class="svc-name" data-i18n="services.nails.name">Tırnak Bakımı</div>
-      <p class="svc-desc" data-i18n="services.nails.desc">Nail art ve medikal pedikürden özel uygulamalara kadar eksiksiz bakım.</p>
-      <div class="svc-footer"><div class="svc-price" data-i18n="services.nails.price">₺180'den itibaren</div><div class="svc-arr">→</div></div>
+    <a href="emslimfit.html" class="svc reveal rd2" style="text-decoration: none; color: inherit;">
+      <div class="svc-n">05</div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+      <div class="svc-name" data-i18n="services.epilation.name">Emslimfit</div>
+      <p class="svc-desc" data-i18n="services.epilation.desc">EMS teknolojisi ile kilo verme ve kas güçlendirme seansları.</p>
+      <div class="svc-footer"><span class="svc-price" data-i18n="services.epilation.price">Fiyat için randevu alın</span><div class="svc-arr">→</div></div>
     </a>
   </div>
 </section>
@@ -1140,80 +1230,6 @@
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="team" id="team">
-  <div class="sec-tag reveal" data-i18n="team.tag">Uzman Ekibimiz</div>
-  <h2 class="sec-h reveal rd1" data-i18n="team.title">Yetenekli<br><em>Ellerimiz</em></h2>
-
-  <div class="team-grid">
-    <div class="team-card reveal">
-      <div class="team-img">
-        <div class="team-bg" style="background:linear-gradient(160deg,#D9EAFD 0%,#BCCCDC 100%)">
-          <div class="tsil"></div>
-        </div>
-        <div class="ttag" data-i18n="team.member1.tag">Cilt Uzmanı</div>
-      </div>
-      <div class="t-name">Ayşe Kaya</div>
-      <div class="t-role" data-i18n="team.member1.role">Dermatoloji Uzmanı</div>
-    </div>
-    <div class="team-card reveal rd1">
-      <div class="team-img">
-        <div class="team-bg" style="background:linear-gradient(160deg,#BCCCDC 0%,#D9EAFD 100%)">
-          <div class="tsil"></div>
-        </div>
-        <div class="ttag" data-i18n="team.member2.tag">Saç Stilisti</div>
-      </div>
-      <div class="t-name">Fatma Demir</div>
-      <div class="t-role" data-i18n="team.member2.role">Senior Saç Tasarımcısı</div>
-    </div>
-    <div class="team-card reveal rd2">
-      <div class="team-img">
-        <div class="team-bg" style="background:linear-gradient(160deg,#9AA6B2 0%,#BCCCDC 100%)">
-          <div class="tsil"></div>
-        </div>
-        <div class="ttag" data-i18n="team.member3.tag">Masaj Terapisti</div>
-      </div>
-      <div class="t-name">Zeynep Arslan</div>
-      <div class="t-role" data-i18n="team.member3.role">Wellness Uzmanı</div>
-    </div>
-    <div class="team-card reveal rd3">
-      <div class="team-img">
-        <div class="team-bg" style="background:linear-gradient(160deg,#D9EAFD 0%,#9AA6B2 100%)">
-          <div class="tsil"></div>
-        </div>
-        <div class="ttag" data-i18n="team.member4.tag">Makyaj Sanatçısı</div>
-      </div>
-      <div class="t-name">Selin Yıldız</div>
-      <div class="t-role" data-i18n="team.member4.role">Kalıcı Makyaj Uzmanı</div>
-    </div>
-  </div>
-
-  <div class="machines reveal rd3">
-    <h3 class="machines-title" data-i18n="machines.title">Kullandığımız Cihazlar</h3>
-    <p class="machines-desc" data-i18n="machines.desc">
-      Tüm işlemlerimizde, güvenliği kanıtlanmış ve sektörde öne çıkan profesyonel cihazlar kullanıyoruz.
-      Aşağıdaki listeyi dilediğiniz zaman güncelleyerek yeni cihazlar ekleyebilirsiniz.
-    </p>
-    <div class="machines-grid">
-      <div class="machine-card">
-      <div class="machine-name" data-i18n="machines.m1.name">Diode Lazer 808 nm</div>
-      <div class="machine-usage" data-i18n="machines.m1.usage">Lazer Epilasyon</div>
-      <div class="machine-note" data-i18n="machines.m1.note">Tüm cilt tiplerine uygun, konforlu ve etkili epilasyon için kullanılan ana lazer sistemimiz.</div>
-      </div>
-      <div class="machine-card">
-      <div class="machine-name" data-i18n="machines.m2.name">IPL Foto Epilasyon</div>
-      <div class="machine-usage" data-i18n="machines.m2.usage">Leke &amp; Kıl Azaltma</div>
-      <div class="machine-note" data-i18n="machines.m2.note">Hassas bölgelerde, leke ve ince tüy görünümünü azaltmak için tercih ettiğimiz yoğun atımlı ışık teknolojisi.</div>
-      </div>
-      <div class="machine-card">
-      <div class="machine-name" data-i18n="machines.m3.name">HydraFacial Cihazı</div>
-      <div class="machine-usage" data-i18n="machines.m3.usage">Cilt Bakımı</div>
-      <div class="machine-note" data-i18n="machines.m3.note">Cildi aynı anda arındıran, nemlendiren ve aydınlatan ileri seviye bakım sistemi.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TESTIMONIAL -->
 <section class="testimonial">
   <p class="t-quote reveal" data-i18n="testimonial.quote">
@@ -1235,31 +1251,21 @@
     <div>
       <a href="#" class="logo f-logo">Harmony Lux <em>Beauty</em></a>
       <p class="f-desc" data-i18n="footer.desc">Güzelliği doğallıkla buluşturduğumuz, size özel deneyimler sunduğumuz premium güzellik merkeziniz.</p>
-      <div class="soc">
-        <div class="sb">ig</div>
-        <div class="sb">fb</div>
-        <div class="sb">tw</div>
-      </div>
     </div>
     <div class="fc">
       <h4 data-i18n="footer.col1.title">Hizmetler</h4>
       <ul>
-        <li data-i18n="footer.col1.item1">Cilt Bakımı</li><li data-i18n="footer.col1.item2">Saç Tasarımı</li>
-        <li data-i18n="footer.col1.item3">Masaj &amp; Terapi</li><li data-i18n="footer.col1.item4">Kalıcı Makyaj</li>
-        <li data-i18n="footer.col1.item5">Lazer Epilasyon</li><li data-i18n="footer.col1.item6">Tırnak Bakımı</li>
-      </ul>
-    </div>
-    <div class="fc">
-      <h4 data-i18n="footer.col2.title">Merkez</h4>
-      <ul>
-        <li data-i18n="footer.col2.item1">Hakkımızda</li><li data-i18n="footer.col2.item2">Ekibimiz</li>
-        <li data-i18n="footer.col2.item3">Müşteri Yorumları</li><li data-i18n="footer.col2.item4">Blog</li><li data-i18n="footer.col2.item5">Kariyer</li>
+        <li><a href="cilt-bakimi.html" style="color:inherit;text-decoration:none" data-i18n="footer.col1.item1">Cilt Bakımı</a></li>
+        <li><a href="lazer-epilasyon.html" style="color:inherit;text-decoration:none" data-i18n="footer.col1.item2">Lazer Epilasyon(Bayan)</a></li>
+        <li><a href="masaj-terapi.html" style="color:inherit;text-decoration:none" data-i18n="footer.col1.item3">Masaj &amp; Terapi</a></li>
+        <li><a href="lazer-epilasyon-erkek.html" style="color:inherit;text-decoration:none" data-i18n="footer.col1.item4">Lazer Epilasyon(Erkek)</a></li>
+        <li><a href="emslimfit.html" style="color:inherit;text-decoration:none" data-i18n="footer.col1.item5">Emslimfit</a></li>
       </ul>
     </div>
     <div class="fc">
       <h4 data-i18n="footer.col3.title">İletişim</h4>
       <ul>
-        <li>0312 XXX XX XX</li><li>harmonyluxbeauty@gmail.com</li>
+        <li><a href="https://wa.me/905369343003" target="_blank" style="color:inherit;text-decoration:none">0536 934 30 03</a></li>
         <li data-i18n="footer.col3.item3">Çankaya, Ankara</li>
         <li data-i18n="footer.col3.item4">Pzt–Cum 09–19</li><li data-i18n="footer.col3.item5">Cts 10–17</li>
       </ul>
@@ -1272,27 +1278,6 @@
 </footer>
 
 <script>
-  // Cursor
-  const cur = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx=0, my=0, rx=0, ry=0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cur.style.left = mx+'px'; cur.style.top = my+'px';
-  });
-
-  (function loop() {
-    rx += (mx-rx)*0.12; ry += (my-ry)*0.12;
-    ring.style.left = rx+'px'; ring.style.top = ry+'px';
-    requestAnimationFrame(loop);
-  })();
-
-  document.querySelectorAll('button,a,.svc,.team-card,.stat-item').forEach(el => {
-    el.addEventListener('mouseenter', () => { ring.style.transform='translate(-50%,-50%) scale(2)'; cur.style.opacity='0'; });
-    el.addEventListener('mouseleave', () => { ring.style.transform='translate(-50%,-50%) scale(1)'; cur.style.opacity='1'; });
-  });
-
   // Progress
   const pb = document.getElementById('pbar');
   window.addEventListener('scroll', () => {
@@ -1325,11 +1310,10 @@
       'hero.float.experience.label': 'Yıllık Deneyim',
 
       'marquee.skin': 'Cilt Bakımı',
-      'marquee.hair': 'Saç Tasarımı',
+      'marquee.hair': 'Lazer Epilasyon(Bayan)',
       'marquee.massage': 'Masaj &amp; Terapi',
-      'marquee.makeup': 'Kalıcı Makyaj',
-      'marquee.epilation': 'Epilasyon',
-      'marquee.nails': 'Tırnak Bakımı',
+      'marquee.makeup': 'Lazer Epilasyon(Erkek)',
+      'marquee.emslimfit': 'Emslimfit',
 
       'stats.clients.num': '2.4<span class="suf">K</span>',
       'stats.clients.label': 'Mutlu Müşteri',
@@ -1345,16 +1329,16 @@
       'services.skin.name': 'Cilt Bakımı',
       'services.skin.desc': 'Doğal bileşenler ve ileri teknolojilerle cildinizi yenileyin. Kişiye özel bakım protokolleri.',
       'services.skin.price': '₺450\'den itibaren',
-      'services.hair.name': 'Saç Tasarımı',
+      'services.hair.name': 'Lazer Epilasyon(Bayan)',
       'services.hair.desc': 'Uzman stilistlerimizle hayalinizdeki saça kavuşun. Kesim, renk ve bakım hizmetleri.',
       'services.hair.price': '₺350\'den itibaren',
       'services.massage.name': 'Masaj &amp; Terapi',
       'services.massage.desc': 'Stresden arının, vücudunuzu yenileyin. Profesyonel masaj ve holistik terapi seçenekleri.',
       'services.massage.price': '₺600\'den itibaren',
-      'services.makeup.name': 'Kalıcı Makyaj',
-      'services.makeup.desc': 'Mikroblading ve kalıcı uygulamalarla her sabah mükemmel görünüme kavuşun.',
-      'services.makeup.price': '₺800\'den itibaren',
-      'services.epilation.name': 'Lazer Epilasyon',
+      'services.makeup.name': 'Lazer Epilasyon(Erkek)',
+      'services.makeup.desc': 'Uzman terapistlerimizle hayalinizdeki saça kavuşun. Kesim, renk ve bakım hizmetleri.',
+      'services.makeup.price': '₺350\'den itibaren',
+      'services.epilation.name': 'Emslimfit',
       'services.epilation.desc': 'Son teknoloji lazer ve IPL yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.',
       'services.epilation.price': '₺200\'den itibaren',
       'services.nails.name': 'Tırnak Bakımı',
@@ -1376,12 +1360,12 @@
       'team.member3.tag': 'Masaj Terapisti',
       'team.member3.role': 'Wellness Uzmanı',
       'team.member4.tag': 'Makyaj Sanatçısı',
-      'team.member4.role': 'Kalıcı Makyaj Uzmanı',
+      'team.member4.role': 'Lazer Epilasyon Uzmanı',
 
       'machines.title': 'Kullandığımız Cihazlar',
       'machines.desc': 'Tüm işlemlerimizde, güvenliği kanıtlanmış ve sektörde öne çıkan profesyonel cihazlar kullanıyoruz. Aşağıdaki listeyi dilediğiniz zaman güncelleyerek yeni cihazlar ekleyebilirsiniz.',
       'machines.m1.name': 'Diode Lazer 808 nm',
-      'machines.m1.usage': 'Lazer Epilasyon',
+      'machines.m1.usage': 'Emslimfit',
       'machines.m1.note': 'Tüm cilt tiplerine uygun, konforlu ve etkili epilasyon için kullanılan ana lazer sistemimiz.',
       'machines.m2.name': 'IPL Foto Epilasyon',
       'machines.m2.usage': 'Leke &amp; Kıl Azaltma',
@@ -1396,10 +1380,10 @@
       'footer.desc': 'Güzelliği doğallıkla buluşturduğumuz, size özel deneyimler sunduğumuz premium güzellik merkeziniz.',
       'footer.col1.title': 'Hizmetler',
       'footer.col1.item1': 'Cilt Bakımı',
-      'footer.col1.item2': 'Saç Tasarımı',
+      'footer.col1.item2': 'Lazer Epilasyon(Bayan)',
       'footer.col1.item3': 'Masaj &amp; Terapi',
-      'footer.col1.item4': 'Kalıcı Makyaj',
-      'footer.col1.item5': 'Lazer Epilasyon',
+      'footer.col1.item4': 'Lazer Epilasyon(Erkek)',
+      'footer.col1.item5': 'Emslimfit',
       'footer.col1.item6': 'Tırnak Bakımı',
       'footer.col2.title': 'Merkez',
       'footer.col2.item1': 'Hakkımızda',
