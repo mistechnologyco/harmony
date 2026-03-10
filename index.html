@@ -115,7 +115,7 @@
 
   nav ul a {
     text-decoration: none;
-    color: var(--mid);
+    color: var(--dark);
     font-size: 0.78rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -428,7 +428,7 @@
   }
 
   .services::before {
-    content: 'HİZMET'; position: absolute;
+    content: attr(data-bg-text); position: absolute;
     top: 2rem; left: 50%; transform: translateX(-50%);
     font-family: 'Playfair Display', serif;
     font-size: 11rem; font-weight: 300;
@@ -436,8 +436,9 @@
   }
 
   .sec-tag {
-    font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
+    font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase;
     color: var(--c4); display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;
+    font-weight: 500;
   }
 
   .services .sec-h { text-align: center; }
@@ -1168,7 +1169,7 @@
           <div class="fc-label" data-i18n="hero.float.clients.label">Mutlu Müşteri</div>
         </div>
         <div class="float-card fc2">
-          <div class="fc-num" data-i18n="hero.float.experience.num">12</div>
+          <div class="fc-num" data-i18n="hero.float.experience.num">5</div>
           <div class="fc-label" data-i18n="hero.float.experience.label">Yıllık Deneyim</div>
         </div>
       </div>
@@ -1197,7 +1198,7 @@
     <span class="stat-label" data-i18n="stats.clients.label">Mutlu Müşteri</span>
   </div>
   <div class="stat-item reveal rd1">
-    <span class="stat-num" data-i18n="stats.staff.num">28<span class="suf">+</span></span>
+    <span class="stat-num" data-i18n="stats.staff.num">8<span class="suf">+</span></span>
     <span class="stat-label" data-i18n="stats.staff.label">Uzman Personel</span>
   </div>
   <div class="stat-item reveal rd2">
@@ -1205,13 +1206,13 @@
     <span class="stat-label" data-i18n="stats.satisfaction.label">Memnuniyet</span>
   </div>
   <div class="stat-item reveal rd3">
-    <span class="stat-num" data-i18n="stats.experience.num">12<span class="suf">+</span></span>
+    <span class="stat-num" data-i18n="stats.experience.num">5<span class="suf">+</span></span>
     <span class="stat-label" data-i18n="stats.experience.label">Yıllık Deneyim</span>
   </div>
 </div>
 
 <!-- SERVICES -->
-<section class="services" id="services">
+<section class="services" id="services" data-bg-text="HİZMET">
   <div class="sec-tag reveal" data-i18n="services.tag">Hizmetlerimiz</div>
   <h2 class="sec-h reveal rd1" data-i18n="services.title">Size Özel<br><em>Deneyimler</em></h2>
 
@@ -1225,14 +1226,14 @@
     </a>
     <a href="lazer-epilasyon.html" class="svc reveal rd1" style="text-decoration: none; color: inherit;">
       <div class="svc-n">02</div>
-      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44l-1.5-8.5A2.5 2.5 0 0 1 8 8h1.5"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44l1.5-8.5A2.5 2.5 0 0 0 16 8h-1.5"/></svg></div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="8" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="12" x2="8" y2="12" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="12" x2="20" y2="12" stroke-width="2" stroke-linecap="round"/><line x1="6.5" y1="6.5" x2="9.5" y2="9.5" stroke-width="2" stroke-linecap="round"/><line x1="14.5" y1="9.5" x2="17.5" y2="6.5" stroke-width="2" stroke-linecap="round"/><line x1="6.5" y1="17.5" x2="9.5" y2="14.5" stroke-width="2" stroke-linecap="round"/><line x1="14.5" y1="14.5" x2="17.5" y2="17.5" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="6" r="1" fill="currentColor"/><circle cx="18" cy="12" r="1" fill="currentColor"/><circle cx="6" cy="12" r="1" fill="currentColor"/></svg></div>
       <div class="svc-name" data-i18n="services.hair.name">Lazer Epilasyon(Bayan)</div>
       <p class="svc-desc" data-i18n="services.hair.desc">Son teknoloji lazer yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.</p>
       <div class="svc-footer"><span class="svc-price" data-i18n="services.hair.price">Fiyat için randevu alın</span><div class="svc-arr">→</div></div>
     </a>
     <a href="masaj-terapi.html" class="svc reveal rd2" style="text-decoration: none; color: inherit;">
       <div class="svc-n">03</div>
-      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v5"/><path d="M4 11h16v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8z"/></svg></div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2c-1.5 0-2.5 1-3 2.5-.5-1.5-1.5-2.5-3-2.5-2 0-3.5 1.5-3.5 3.5 0 4 6.5 9 6.5 9s6.5-5 6.5-9c0-2-1.5-3.5-3.5-3.5z" transform="translate(6 2)"/><path d="M8 14c-1 .5-2 1.5-2 3v5h12v-5c0-1.5-1-2.5-2-3"/><circle cx="12" cy="14" r="1.5"/><path d="M10 16.5c-.5.5-1 1-1 2M14 16.5c.5.5 1 1 1 2"/></svg></div>
       <div class="svc-name" data-i18n="services.massage.name">Masaj &amp; Terapi</div>
       <p class="svc-desc" data-i18n="services.massage.desc">Stresden arının, vücudunuzu yenileyin. Profesyonel masaj ve holistik terapi seçenekleri.</p>
       <div class="svc-footer"><span class="svc-price" data-i18n="services.massage.price">Fiyat için randevu alın</span><div class="svc-arr">→</div></div>
@@ -1252,7 +1253,7 @@
   <div class="about-left">
     <div class="sec-tag reveal" data-i18n="about.tag">Hakkımızda</div>
     <h2 class="sec-h reveal rd1" data-i18n="about.title">Güzellik<br>Bir <em>Sanattır</em></h2>
-    <p class="reveal rd2" data-i18n="about.p1">2012 yılından bu yana güzellik sektöründe müşterilerimize premium hizmet veriyoruz. Her birini birey olarak değerlendirerek ihtiyaçlarına özel çözümler sunuyoruz.</p>
+    <p class="reveal rd2" data-i18n="about.p1">2021 yılından bu yana güzellik sektöründe müşterilerimize premium hizmet veriyoruz. Her birini birey olarak değerlendirerek ihtiyaçlarına özel çözümler sunuyoruz.</p>
     <p class="reveal rd3" data-i18n="about.p2">Uzman ekibimiz sürekli eğitim programları ile sektörün en güncel tekniklerini uygular. Hedefimiz tek: doğal güzelliğinizi en iyi şekilde ortaya çıkarmak.</p>
     <div class="sig reveal rd4" data-i18n="about.signature">— Harmony Lux Beauty</div>
   </div>
@@ -1309,7 +1310,6 @@
   <p class="machines-intro reveal rd2">En son teknoloji cihazlarla size özel bakım sunuyoruz.</p>
   <div class="machines-grid reveal rd3">
     <div class="machine-card"><img src="mk1.png" alt="Silhouette" loading="lazy"></div>
-    <div class="machine-card"><img src="mk2.png" alt="LPG Endermologie" loading="lazy"></div>
     <div class="machine-card"><img src="mk3.png" alt="TURBO 3G MAX" loading="lazy"></div>
     <div class="machine-card"><img src="mk4.png" alt="Slim Beauty" loading="lazy"></div>
     <div class="machine-card"><img src="mk5.png" alt="4 Falcon Cube Diode Laser" loading="lazy"></div>
@@ -1392,7 +1392,7 @@
 
       'hero.float.clients.num': '2.4K<span style="font-size:1rem;color:var(--c4)">+</span>',
       'hero.float.clients.label': 'Mutlu Müşteri',
-      'hero.float.experience.num': '12',
+      'hero.float.experience.num': '5',
       'hero.float.experience.label': 'Yıllık Deneyim',
 
       'marquee.skin': 'Cilt Bakımı',
@@ -1403,11 +1403,11 @@
 
       'stats.clients.num': '2.4<span class="suf">K</span>',
       'stats.clients.label': 'Mutlu Müşteri',
-      'stats.staff.num': '28<span class="suf">+</span>',
+      'stats.staff.num': '8<span class="suf">+</span>',
       'stats.staff.label': 'Uzman Personel',
       'stats.satisfaction.num': '95<span class="suf">%</span>',
       'stats.satisfaction.label': 'Memnuniyet',
-      'stats.experience.num': '12<span class="suf">+</span>',
+      'stats.experience.num': '5<span class="suf">+</span>',
       'stats.experience.label': 'Yıllık Deneyim',
 
       'services.tag': 'Hizmetlerimiz',
@@ -1416,16 +1416,16 @@
       'services.skin.desc': 'Doğal bileşenler ve ileri teknolojilerle cildinizi yenileyin. Kişiye özel bakım protokolleri.',
       'services.skin.price': 'Fiyat için randevu alın',
       'services.hair.name': 'Lazer Epilasyon(Bayan)',
-      'services.hair.desc': 'Uzman stilistlerimizle hayalinizdeki saça kavuşun. Kesim, renk ve bakım hizmetleri.',
+      'services.hair.desc': 'Son teknoloji lazer yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.',
       'services.hair.price': 'Fiyat için randevu alın',
       'services.massage.name': 'Masaj &amp; Terapi',
       'services.massage.desc': 'Stresden arının, vücudunuzu yenileyin. Profesyonel masaj ve holistik terapi seçenekleri.',
       'services.massage.price': 'Fiyat için randevu alın',
       'services.makeup.name': 'Lazer Epilasyon(Erkek)',
-      'services.makeup.desc': 'Uzman terapistlerimizle hayalinizdeki saça kavuşun. Kesim, renk ve bakım hizmetleri.',
+      'services.makeup.desc': 'Son teknoloji lazer ve IPL yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.',
       'services.makeup.price': 'Fiyat için randevu alın',
       'services.epilation.name': 'Emslimfit',
-      'services.epilation.desc': 'Son teknoloji lazer ve IPL yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.',
+      'services.epilation.desc': 'EMS teknolojisi ile kilo verme ve kas güçlendirme seansları.',
       'services.epilation.price': 'Fiyat için randevu alın',
       'services.nails.name': 'Tırnak Bakımı',
       'services.nails.desc': 'Nail art ve medikal pedikürden özel uygulamalara kadar eksiksiz bakım.',
@@ -1433,7 +1433,7 @@
 
       'about.tag': 'Hakkımızda',
       'about.title': 'Güzellik<br>Bir <em>Sanattır</em>',
-      'about.p1': '2012 yılından bu yana güzellik sektöründe müşterilerimize premium hizmet veriyoruz. Her birini birey olarak değerlendirerek ihtiyaçlarına özel çözümler sunuyoruz.',
+      'about.p1': '2021 yılından bu yana güzellik sektöründe müşterilerimize premium hizmet veriyoruz. Her birini birey olarak değerlendirerek ihtiyaçlarına özel çözümler sunuyoruz.',
       'about.p2': 'Uzman ekibimiz sürekli eğitim programları ile sektörün en güncel tekniklerini uygular. Hedefimiz tek: doğal güzelliğinizi en iyi şekilde ortaya çıkarmak.',
       'about.signature': '— Harmony Lux Beauty',
 
@@ -1497,23 +1497,23 @@
 
       'hero.float.clients.num': '2.4K<span style="font-size:1rem;color:var(--c4)">+</span>',
       'hero.float.clients.label': 'Happy Clients',
-      'hero.float.experience.num': '12',
+      'hero.float.experience.num': '5',
       'hero.float.experience.label': 'Years of Experience',
 
       'marquee.skin': 'Facial Care',
-      'marquee.hair': 'Hair Design',
+      'marquee.hair': 'Laser Epilation (Women)',
       'marquee.massage': 'Massage & Therapy',
-      'marquee.makeup': 'Permanent Make-up',
+      'marquee.makeup': 'Laser Epilation (Men)',
       'marquee.epilation': 'Epilation',
       'marquee.nails': 'Nail Care',
 
       'stats.clients.num': '2.4<span class="suf">K</span>',
       'stats.clients.label': 'Happy Clients',
-      'stats.staff.num': '28<span class="suf">+</span>',
+      'stats.staff.num': '8<span class="suf">+</span>',
       'stats.staff.label': 'Expert Staff',
       'stats.satisfaction.num': '95<span class="suf">%</span>',
       'stats.satisfaction.label': 'Satisfaction',
-      'stats.experience.num': '12<span class="suf">+</span>',
+      'stats.experience.num': '5<span class="suf">+</span>',
       'stats.experience.label': 'Years of Experience',
 
       'services.tag': 'Our Services',
@@ -1521,17 +1521,17 @@
       'services.skin.name': 'Facial Care',
       'services.skin.desc': 'Renew your skin with natural ingredients and advanced technologies. Fully personalized care protocols.',
       'services.skin.price': 'Contact for pricing',
-      'services.hair.name': 'Hair Design',
-      'services.hair.desc': 'Achieve the hair you dream of with our expert stylists. Cut, color and care services.',
+      'services.hair.name': 'Laser Epilation (Women)',
+      'services.hair.desc': 'Long-lasting and painless epilation experience with state-of-the-art laser methods.',
       'services.hair.price': 'Contact for pricing',
       'services.massage.name': 'Massage &amp; Therapy',
       'services.massage.desc': 'Release stress and renew your body. Professional massage and holistic therapy options.',
       'services.massage.price': 'Contact for pricing',
-      'services.makeup.name': 'Permanent Make-up',
-      'services.makeup.desc': 'Wake up to a perfect look every morning with microblading and permanent make-up applications.',
+      'services.makeup.name': 'Laser Epilation (Men)',
+      'services.makeup.desc': 'Long-lasting and painless epilation experience with state-of-the-art laser and IPL methods.',
       'services.makeup.price': 'Contact for pricing',
-      'services.epilation.name': 'Laser Epilation',
-      'services.epilation.desc': 'Long-lasting, comfortable epilation with state-of-the-art laser and IPL technologies.',
+      'services.epilation.name': 'Emslimfit',
+      'services.epilation.desc': 'Weight loss and muscle strengthening sessions with EMS technology.',
       'services.epilation.price': 'Contact for pricing',
       'services.nails.name': 'Nail Care',
       'services.nails.desc': 'From nail art to medical pedicure, complete hand and foot care.',
@@ -1539,7 +1539,7 @@
 
       'about.tag': 'About',
       'about.title': 'Beauty<br>Is an <em>Art</em>',
-      'about.p1': 'Since 2012 we have been providing premium beauty services, treating each guest as an individual and creating bespoke solutions.',
+      'about.p1': 'Since 2021 we have been providing premium beauty services, treating each guest as an individual and creating bespoke solutions.',
       'about.p2': 'Our expert team follows continuous training to apply the most up-to-date techniques in the industry. Our only goal: to reveal your natural beauty in the best possible way.',
       'about.signature': '— Harmony Lux Beauty',
 
@@ -1596,96 +1596,91 @@
       'nav.team': 'Команда',
 
       'hero.tag': 'Премиум центр красоты · Анкара',
-      'hero.title': 'Секрет<br><span class="l2">Вашей</span><span class="l3">Естественной Красоты</span>',
-      'hero.desc': 'Мы создаём индивидуальные программы для каждого гостя и раскрываем вашу естественную красоту в мельчайших деталях. Добро пожаловать в место, где вы чувствуете себя лучше всего.',
-      'hero.cta': 'Записаться',
-      'hero.link': 'Посмотреть услуги',
+      'hero.title': 'Естественная<br><span class="l2">Красота</span><span class="l3">Секрет</span>',
+      'hero.desc': 'Мы создаём уникальные программы для каждого клиента и раскрываем вашу естественную красоту до мельчайших деталей. Добро пожаловать туда, где вы чувствуете себя лучше всего.',
+      'hero.cta': 'Записаться на приём',
+      'hero.link': 'Узнать об услугах',
 
       'hero.float.clients.num': '2,4K<span style="font-size:1rem;color:var(--c4)">+</span>',
       'hero.float.clients.label': 'Довольных клиентов',
-      'hero.float.experience.num': '12',
+      'hero.float.experience.num': '5',
       'hero.float.experience.label': 'Лет опыта',
 
       'marquee.skin': 'Уход за кожей',
-      'marquee.hair': 'Дизайн волос',
+      'marquee.hair': 'Лазерная эпиляция (женская)',
       'marquee.massage': 'Массаж и терапия',
-      'marquee.makeup': 'Перманентный макияж',
-      'marquee.epilation': 'Эпиляция',
-      'marquee.nails': 'Уход за ногтями',
+      'marquee.makeup': 'Лазерная эпиляция (мужская)',
+      'marquee.emslimfit': 'Emslimfit',
 
       'stats.clients.num': '2,4<span class="suf">K</span>',
       'stats.clients.label': 'Довольных клиентов',
-      'stats.staff.num': '28<span class="suf">+</span>',
+      'stats.staff.num': '8<span class="suf">+</span>',
       'stats.staff.label': 'Экспертов',
       'stats.satisfaction.num': '95<span class="suf">%</span>',
       'stats.satisfaction.label': 'Удовлетворённость',
-      'stats.experience.num': '12<span class="suf">+</span>',
+      'stats.experience.num': '5<span class="suf">+</span>',
       'stats.experience.label': 'Лет опыта',
 
       'services.tag': 'Наши услуги',
       'services.title': 'Индивидуальные<br><em>Программы</em>',
       'services.skin.name': 'Уход за кожей',
       'services.skin.desc': 'Обновите кожу с помощью натуральных компонентов и современных технологий. Полностью персонализированные протоколы ухода.',
-      'services.skin.price': 'Свяжитесь для цен',
-      'services.hair.name': 'Дизайн волос',
-      'services.hair.desc': 'Получите причёску вашей мечты с нашими стилистами. Стрижка, окрашивание и уход.',
-      'services.hair.price': 'Свяжитесь для цен',
+      'services.skin.price': 'Запишитесь для уточнения цены',
+      'services.hair.name': 'Лазерная эпиляция (женская)',
+      'services.hair.desc': 'Долговременная и безболезненная эпиляция с использованием новейших лазерных технологий.',
+      'services.hair.price': 'Запишитесь для уточнения цены',
       'services.massage.name': 'Массаж и терапия',
-      'services.massage.desc': 'Снимите стресс и обновите тело. Профессиональный массаж и холистические методики.',
-      'services.massage.price': 'Свяжитесь для цен',
-      'services.makeup.name': 'Перманентный макияж',
-      'services.makeup.desc': 'Просыпайтесь с идеальным макияжем каждый день благодаря микроблейдингу и перманентным техникам.',
-      'services.makeup.price': 'Свяжитесь для цен',
-      'services.epilation.name': 'Лазерная эпиляция',
-      'services.epilation.desc': 'Длительный и комфортный результат благодаря лазерным и IPL‑технологиям последнего поколения.',
-      'services.epilation.price': 'Свяжитесь для цен',
-      'services.nails.name': 'Уход за ногтями',
-      'services.nails.desc': 'От nail‑арта до медицинского педикюра — полный уход за руками и ногами.',
-      'services.nails.price': 'Свяжитесь для цен',
+      'services.massage.desc': 'Избавьтесь от стресса и обновите своё тело. Профессиональный массаж и холистические методы терапии.',
+      'services.massage.price': 'Запишитесь для уточнения цены',
+      'services.makeup.name': 'Лазерная эпиляция (мужская)',
+      'services.makeup.desc': 'Долговременная и безболезненная эпиляция с использованием новейших лазерных и IPL технологий.',
+      'services.makeup.price': 'Запишитесь для уточнения цены',
+      'services.epilation.name': 'Emslimfit',
+      'services.epilation.desc': 'Сеансы похудения и укрепления мышц с помощью EMS технологии.',
+      'services.epilation.price': 'Запишитесь для уточнения цены',
 
       'about.tag': 'О нас',
       'about.title': 'Красота —<br><em>Это искусство</em>',
-      'about.p1': 'С 2012 года мы предоставляем премиальные услуги в сфере красоты, рассматривая каждого гостя индивидуально и подбирая решения под его потребности.',
-      'about.p2': 'Наша команда постоянно обучается и применяет самые современные техники индустрии. Наша цель одна: максимально раскрыть вашу естественную красоту.',
+      'about.p1': 'С 2021 года мы предоставляем премиальные услуги в индустрии красоты нашим клиентам. Мы рассматриваем каждого как личность и предлагаем решения, соответствующие их потребностям.',
+      'about.p2': 'Наша команда экспертов применяет самые современные техники индустрии благодаря постоянным программам обучения. Наша единственная цель: максимально раскрыть вашу естественную красоту.',
       'about.signature': '— Harmony Lux Beauty',
 
       'team.tag': 'Наша команда',
       'team.title': 'Талантливые<br><em>Руки</em>',
       'team.member1.tag': 'Специалист по коже',
       'team.member1.role': 'Дерматолог',
-      'team.member2.tag': 'Парикмахер‑стилист',
-      'team.member2.role': 'Старший дизайнер причесок',
+      'team.member2.tag': 'Парикмахер-стилист',
+      'team.member2.role': 'Старший дизайнер причёсок',
       'team.member3.tag': 'Массажист',
       'team.member3.role': 'Специалист по wellness',
       'team.member4.tag': 'Визажист',
       'team.member4.role': 'Мастер перманентного макияжа',
 
       'machines.title': 'Оборудование',
-      'machines.desc': 'Во всех процедурах мы используем профессиональные, проверенные устройства, признанные в индустрии. Вы можете в любой момент обновить список, добавив новые аппараты.',
+      'machines.desc': 'Во всех процедурах мы используем профессиональное, проверенное оборудование, признанное в индустрии. Вы можете в любой момент обновить список, добавив новые аппараты.',
       'machines.m1.name': 'Диодный лазер 808 нм',
       'machines.m1.usage': 'Лазерная эпиляция',
       'machines.m1.note': 'Наш основной лазер для комфортной и эффективной эпиляции для всех типов кожи.',
       'machines.m2.name': 'IPL фотоэпиляция',
       'machines.m2.usage': 'Пигментация и пушковые волосы',
-      'machines.m2.note': 'Технология интенсивного импульсного света, которую мы используем для уменьшения пятен и тонких волосков в деликатных зонах.',
+      'machines.m2.note': 'Технология интенсивного импульсного света для уменьшения пятен и тонких волосков в деликатных зонах.',
       'machines.m3.name': 'Аппарат HydraFacial',
       'machines.m3.usage': 'Уход за кожей',
       'machines.m3.note': 'Современная система, которая одновременно очищает, увлажняет и придаёт коже сияние.',
 
-      'testimonial.quote': '"Каждый сеанс в Harmony Lux Beauty — это новое открытие себя. Профессионализм и забота команды по‑настоящему впечатляют."',
+      'testimonial.quote': '"Каждый сеанс в Harmony Lux Beauty — это новое открытие себя. Профессионализм и забота команды по-настоящему впечатляют."',
       'testimonial.author': '— Элиф Шахин · Постоянная клиентка',
 
-      'footer.desc': 'Премиальный центр красоты, где естественность и индивидуальный подход стоят на первом месте.',
+      'footer.desc': 'Премиальный центр красоты, где естественность сочетается с индивидуальным подходом.',
       'footer.col1.title': 'Услуги',
       'footer.col1.item1': 'Уход за кожей',
-      'footer.col1.item2': 'Дизайн волос',
+      'footer.col1.item2': 'Лазерная эпиляция (женская)',
       'footer.col1.item3': 'Массаж и терапия',
-      'footer.col1.item4': 'Перманентный макияж',
-      'footer.col1.item5': 'Лазерная эпиляция',
-      'footer.col1.item6': 'Уход за ногтями',
+      'footer.col1.item4': 'Лазерная эпиляция (мужская)',
+      'footer.col1.item5': 'Emslimfit',
       'footer.col2.title': 'Центр',
       'footer.col2.item1': 'О нас',
-      'footer.col2.item2': 'Команда',
+      'footer.col2.item2': 'Наша команда',
       'footer.col2.item3': 'Отзывы клиентов',
       'footer.col2.item4': 'Блог',
       'footer.col2.item5': 'Карьера',
@@ -1713,6 +1708,17 @@
         el.innerHTML = value;
       }
     });
+
+    // Update background text
+    const servicesSection = document.querySelector('.services');
+    if (servicesSection) {
+      const bgTexts = {
+        'tr': 'HİZMET',
+        'en': 'SERVICE',
+        'ru': 'УСЛУГИ'
+      };
+      servicesSection.setAttribute('data-bg-text', bgTexts[lang] || 'HİZMET');
+    }
 
     langButtons.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
