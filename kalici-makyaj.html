@@ -10,7 +10,15 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body { background:var(--c1); color:var(--dark); font-family:'Jost',sans-serif; font-weight:300; }
-  nav { position:fixed; top:0; left:0; right:0; z-index:500; padding:1.6rem 5rem; display:flex; align-items:center; justify-content:space-between; background:rgba(248,250,252,0.92); backdrop-filter:blur(20px); box-shadow:0 1px 0 var(--c3); }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:500;
+    padding:1.6rem 5rem;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(248,250,252,0.92); backdrop-filter:blur(20px);
+    box-shadow:0 1px 0 var(--c3);
+  }
   .logo { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:600; letter-spacing:0.1em; color:var(--dark); text-decoration:none; }
   .logo em { font-style:italic; color:var(--c4); }
   nav ul { list-style:none; display:flex; gap:3rem; }
@@ -21,33 +29,134 @@
   nav ul a { text-decoration:none; color:var(--mid); font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; position:relative; padding-bottom:4px; }
   nav ul a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--c4); transition:width 0.3s; }
   nav ul a:hover::after { width:100%; }
-  .hero-detail { padding:10rem 5rem 5rem; max-width:1200px; margin:0 auto; }
-  .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--c4); text-decoration:none; margin-bottom:3rem; transition:color 0.3s; }
+
+  /* HERO — three-column */
+  .hero-wrap {
+    padding-top: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 92vh;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 3rem 5rem 5rem;
+  }
+  .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--c4); text-decoration:none; margin-bottom:2.5rem; transition:color 0.3s; }
   .back-link:hover { color:var(--dark); }
-  h1 { font-family:'Playfair Display',serif; font-size:clamp(3rem,5vw,5rem); font-weight:300; line-height:1.1; margin-bottom:2rem; }
+  h1 { font-family:'Playfair Display',serif; font-size:clamp(3rem,4.5vw,5rem); font-weight:300; line-height:1.08; margin-bottom:1.8rem; }
   h1 em { font-style:italic; color:var(--c4); }
-  .intro { font-size:1.1rem; line-height:1.8; color:var(--mid); margin-bottom:3rem; max-width:800px; }
-  .subsec { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:400; color:var(--dark); margin:4rem 0 2rem; letter-spacing:0.05em; }
-  .content-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:5rem; }
-  .service-item { background:white; padding:2.5rem; border:1px solid var(--c3); transition:all 0.3s; }
-  .service-item:hover { box-shadow:0 10px 40px rgba(154,166,178,0.2); transform:translateY(-5px); }
-  .service-item h3 { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:400; margin-bottom:0.75rem; color:var(--dark); }
-  .service-item p { font-size:0.9rem; line-height:1.8; color:var(--mid); }
-  .note-box { background:var(--c2); border-left:3px solid var(--c4); padding:1.5rem 2rem; margin-bottom:5rem; font-size:0.92rem; line-height:1.8; color:var(--mid); }
+  .intro { font-size:1.05rem; line-height:1.85; color:var(--mid); max-width:480px; }
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--c1) 0%, transparent 18%);
+  }
+
+  /* CONTENT */
+  .content-wrap { max-width:1200px; margin:0 auto; padding:5rem 5rem 2rem; }
+  .subsec { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:400; color:var(--dark); margin:3.5rem 0 1.8rem; letter-spacing:0.05em; }
+  .subsec:first-of-type { margin-top:0; }
+  .content-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:3rem; }
+  .service-item { background:white; padding:2.2rem; border:1px solid var(--c3); transition:all 0.3s; }
+  .service-item:hover { box-shadow:0 10px 40px rgba(154,166,178,0.2); transform:translateY(-4px); }
+  .service-item h3 { font-family:'Playfair Display',serif; font-size:1.45rem; font-weight:400; margin-bottom:0.65rem; color:var(--dark); }
+  .service-item p { font-size:0.88rem; line-height:1.8; color:var(--mid); }
+
+  /* SHOWCASE BAND */
+  .showcase {
+    width: 100%;
+    margin: 1rem 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .showcase img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .showcase-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 55%, rgba(30,45,56,0.55) 100%);
+  }
+  .showcase-label {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--c1);
+    letter-spacing: 0.06em;
+  }
+
+  /* NOTE */
+  .note-box { background:var(--c2); border-left:3px solid var(--c4); padding:1.5rem 2rem; margin:3rem 0 5rem; font-size:0.92rem; line-height:1.8; color:var(--mid); }
+
+  /* WHATSAPP */
   .whatsapp-btn { position:fixed; bottom:30px; right:30px; width:60px; height:60px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:1000; transition:all 0.3s ease; text-decoration:none; }
   .whatsapp-btn:hover { transform:scale(1.1); box-shadow:0 6px 30px rgba(37,211,102,0.6); }
   .whatsapp-btn svg { width:32px; height:32px; fill:white; }
-  @media (max-width:768px) {
+
+  /* MOBILE */
+  @media (max-width:900px) {
     nav { padding:1rem 1.5rem; }
     .logo { font-size:1.3rem; }
     nav ul { display:none; }
     .nav-right { margin-left:auto; }
-    .hero-detail { padding:8rem 1.5rem 3rem; }
-    h1 { font-size:2.8rem; }
-    .content-grid { grid-template-columns:1fr; gap:1.5rem; margin-bottom:3rem; }
-    .service-item { padding:1.75rem; }
+
+    .hero-wrap {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      min-height: auto;
+      padding-top: 5rem;
+    }
+    .hero-left {
+      grid-column: 1 / -1;
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+    .hero-right {
+      height: 52vw;
+      min-height: 180px;
+    }
+    /* ilk görselde sağdan, ikincide soldan gradient */
+    .hero-right:first-of-type::after {
+      background: linear-gradient(to right, transparent 80%, var(--c1) 100%);
+    }
+    .hero-right:last-of-type::after {
+      background: linear-gradient(to left, transparent 80%, var(--c1) 100%);
+    }
+
+    .content-wrap { padding:2.5rem 1.5rem 1.5rem; }
+    .content-grid { grid-template-columns:1fr; gap:1rem; margin-bottom:2rem; }
+    .service-item { padding:1.4rem; }
+    .showcase img { max-height:260px; }
+    .showcase-label { left:1.5rem; bottom:1.2rem; }
     .whatsapp-btn { width:50px; height:50px; bottom:20px; right:20px; }
     .whatsapp-btn svg { width:26px; height:26px; }
+  }
+
+  @media (max-width:480px) {
+    h1 { font-size:2.4rem; }
+    .hero-right { height:60vw; }
   }
 </style>
 </head>
@@ -69,14 +178,25 @@
   </div>
 </nav>
 
-<div class="hero-detail">
-  <a href="index.html#services" class="back-link" data-i18n="detail.back">← Geri Dön</a>
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero-left">
+    <a href="index.html#services" class="back-link" data-i18n="detail.back">← Geri Dön</a>
+    <h1 data-i18n="detail.title">Kalıcı <em>Makyaj</em></h1>
+    <p class="intro" data-i18n="detail.intro">
+      Kaş, dudak ve göz çizginizi her gün yeniden çizmek zorunda kalmayın. Uzman ekibimizle doğal, uzun ömürlü ve size özel kalıcı makyaj uygulamaları sunuyoruz.
+    </p>
+  </div>
+  <div class="hero-right">
+    <img src="ddk.png" alt="Kalıcı Makyaj" loading="eager">
+  </div>
+  <div class="hero-right">
+    <img src="ddk2.png" alt="Kalıcı Makyaj Uygulama" loading="eager">
+  </div>
+</div>
 
-  <h1 data-i18n="detail.title">Kalıcı <em>Makyaj</em></h1>
-
-  <p class="intro" data-i18n="detail.intro">
-    Kaş, dudak ve göz çizginizi her gün yeniden çizmek zorunda kalmayın. Uzman ekibimizle doğal, uzun ömürlü ve size özel kalıcı makyaj uygulamaları sunuyoruz.
-  </p>
+<!-- CONTENT -->
+<div class="content-wrap">
 
   <h2 class="subsec" data-i18n="sec.kas">Kaş Uygulamaları</h2>
   <div class="content-grid">
@@ -114,6 +234,11 @@
     </div>
   </div>
 
+</div>
+
+<!-- CONTENT cont. -->
+<div class="content-wrap">
+
   <h2 class="subsec" data-i18n="sec.goz">Göz Uygulamaları</h2>
   <div class="content-grid">
     <div class="service-item">
@@ -129,6 +254,7 @@
   <div class="note-box" data-i18n="pmu.note">
     Tüm kalıcı makyaj uygulamalarında ücretsiz konsültasyon yapılmaktadır. İşlem sonrası bakım ürünleri ve detaylı bakım talimatları tarafımızca sağlanır. Sonuçlar kişiden kişiye değişmekle birlikte ortalama 1–3 yıl kalıcıdır.
   </div>
+
 </div>
 
 <a href="https://wa.me/905369343003" target="_blank" class="whatsapp-btn" aria-label="WhatsApp ile iletişime geç">
@@ -140,60 +266,62 @@
 <script>
   const translations = {
     tr: {
-      'nav.services': 'Hizmetler', 'nav.about': 'Hakkımızda', 'nav.team': 'Ekip',
-      'detail.back': '← Geri Dön',
-      'detail.title': 'Kalıcı <em>Makyaj</em>',
-      'detail.intro': 'Kaş, dudak ve göz çizginizi her gün yeniden çizmek zorunda kalmayın. Uzman ekibimizle doğal, uzun ömürlü ve size özel kalıcı makyaj uygulamaları sunuyoruz.',
-      'sec.kas': 'Kaş Uygulamaları', 'sec.dudak': 'Dudak Uygulamaları', 'sec.goz': 'Göz Uygulamaları',
-      'pmu.microblading': 'Microblading', 'pmu.microblading.desc': 'El tekniğiyle tek tek kıl çizgileri oluşturularak doğal görünümlü, dolgun kaşlar elde edilir. 12–18 ay kalıcılık.',
-      'pmu.ombre': 'Ombre / Powder Kaş', 'pmu.ombre.desc': 'Makyaj efekti veren, içten dışa doğru açılan gölgeli kaş tekniği. Yağlı ve karma ciltler için idealdir.',
-      'pmu.combo': 'Combo Kaş', 'pmu.combo.desc': 'Microblading ve ombre tekniklerinin birleşimi. Hem doğal hem de dolgun bir görünüm sunar.',
-      'pmu.aqua': 'Aqua Kaş', 'pmu.aqua.desc': 'Dijital makine ile uygulanan, su damlası efektli ultra doğal kaş tekniği. Hassas ciltler için uygundur.',
-      'pmu.lipliner': 'Dudak Kontür', 'pmu.lipliner.desc': 'Dudak sınırlarını belirginleştirerek daha şekilli ve çekici bir görünüm kazandırır.',
-      'pmu.lipblush': 'Lip Blush', 'pmu.lipblush.desc': 'Dudaklara doğal bir renk ve dolgunluk hissi veren, kontür ve dolgu tekniklerini birleştiren uygulama.',
-      'pmu.fullip': 'Tam Dudak Dolgusu', 'pmu.fullip.desc': 'Dudağın tamamına renk pigmenti uygulanarak kalıcı ruj efekti elde edilir. Canlı ve belirgin dudaklar.',
-      'pmu.eyeliner': 'Kalıcı Eyeliner', 'pmu.eyeliner.desc': 'Üst veya alt göz kapağına ince ya da kalın çizgi uygulaması. Gözleri belirginleştirir, makyaj süresini kısaltır.',
-      'pmu.lashline': 'Lash Line Enhancement', 'pmu.lashline.desc': 'Kirpik dipleri arasına pigment uygulanarak kirpiklerin daha gür ve yoğun görünmesi sağlanır.',
-      'pmu.note': 'Tüm kalıcı makyaj uygulamalarında ücretsiz konsültasyon yapılmaktadır. İşlem sonrası bakım ürünleri ve detaylı bakım talimatları tarafımızca sağlanır. Sonuçlar kişiden kişiye değişmekle birlikte ortalama 1–3 yıl kalıcıdır.'
+      'nav.services':'Hizmetler','nav.about':'Hakkımızda','nav.team':'Ekip',
+      'detail.back':'← Geri Dön',
+      'detail.title':'Kalıcı <em>Makyaj</em>',
+      'detail.intro':'Kaş, dudak ve göz çizginizi her gün yeniden çizmek zorunda kalmayın. Uzman ekibimizle doğal, uzun ömürlü ve size özel kalıcı makyaj uygulamaları sunuyoruz.',
+      'sec.kas':'Kaş Uygulamaları','sec.dudak':'Dudak Uygulamaları','sec.goz':'Göz Uygulamaları',
+      'showcase.label':'Profesyonel Uygulama',
+      'pmu.microblading':'Microblading','pmu.microblading.desc':'El tekniğiyle tek tek kıl çizgileri oluşturularak doğal görünümlü, dolgun kaşlar elde edilir. 12–18 ay kalıcılık.',
+      'pmu.ombre':'Ombre / Powder Kaş','pmu.ombre.desc':'Makyaj efekti veren, içten dışa doğru açılan gölgeli kaş tekniği. Yağlı ve karma ciltler için idealdir.',
+      'pmu.combo':'Combo Kaş','pmu.combo.desc':'Microblading ve ombre tekniklerinin birleşimi. Hem doğal hem de dolgun bir görünüm sunar.',
+      'pmu.aqua':'Aqua Kaş','pmu.aqua.desc':'Dijital makine ile uygulanan, su damlası efektli ultra doğal kaş tekniği. Hassas ciltler için uygundur.',
+      'pmu.lipliner':'Dudak Kontür','pmu.lipliner.desc':'Dudak sınırlarını belirginleştirerek daha şekilli ve çekici bir görünüm kazandırır.',
+      'pmu.lipblush':'Lip Blush','pmu.lipblush.desc':'Dudaklara doğal bir renk ve dolgunluk hissi veren, kontür ve dolgu tekniklerini birleştiren uygulama.',
+      'pmu.fullip':'Tam Dudak Dolgusu','pmu.fullip.desc':'Dudağın tamamına renk pigmenti uygulanarak kalıcı ruj efekti elde edilir. Canlı ve belirgin dudaklar.',
+      'pmu.eyeliner':'Kalıcı Eyeliner','pmu.eyeliner.desc':'Üst veya alt göz kapağına ince ya da kalın çizgi uygulaması. Gözleri belirginleştirir, makyaj süresini kısaltır.',
+      'pmu.lashline':'Lash Line Enhancement','pmu.lashline.desc':'Kirpik dipleri arasına pigment uygulanarak kirpiklerin daha gür ve yoğun görünmesi sağlanır.',
+      'pmu.note':'Tüm kalıcı makyaj uygulamalarında ücretsiz konsültasyon yapılmaktadır. İşlem sonrası bakım ürünleri ve detaylı bakım talimatları tarafımızca sağlanır. Sonuçlar kişiden kişiye değişmekle birlikte ortalama 1–3 yıl kalıcıdır.'
     },
     en: {
-      'nav.services': 'Services', 'nav.about': 'About', 'nav.team': 'Team',
-      'detail.back': '← Back',
-      'detail.title': 'Permanent <em>Makeup</em>',
-      'detail.intro': 'No more drawing your brows, lips or eyeliner every day. Our expert team offers natural, long-lasting and personalised permanent makeup treatments.',
-      'sec.kas': 'Eyebrow Treatments', 'sec.dudak': 'Lip Treatments', 'sec.goz': 'Eye Treatments',
-      'pmu.microblading': 'Microblading', 'pmu.microblading.desc': 'Hair-stroke technique applied by hand to create natural-looking, full brows. Lasts 12–18 months.',
-      'pmu.ombre': 'Ombre / Powder Brows', 'pmu.ombre.desc': 'A shaded brow technique that mimics a makeup effect, fading from inner to outer edge. Ideal for oily and combination skin.',
-      'pmu.combo': 'Combo Brows', 'pmu.combo.desc': 'A combination of microblading and ombre techniques for a look that is both natural and full.',
-      'pmu.aqua': 'Aqua Brows', 'pmu.aqua.desc': 'An ultra-natural brow technique applied with a digital machine, creating a soft watercolour effect. Suitable for sensitive skin.',
-      'pmu.lipliner': 'Lip Liner', 'pmu.lipliner.desc': 'Defines the lip border for a more shapely and attractive appearance.',
-      'pmu.lipblush': 'Lip Blush', 'pmu.lipblush.desc': 'Combines liner and fill techniques to give lips a natural colour and a sense of fullness.',
-      'pmu.fullip': 'Full Lip Colour', 'pmu.fullip.desc': 'Pigment applied across the entire lip for a permanent lipstick effect. Vivid and defined lips.',
-      'pmu.eyeliner': 'Permanent Eyeliner', 'pmu.eyeliner.desc': 'Thin or thick line applied to the upper or lower lid. Defines the eyes and cuts down makeup time.',
-      'pmu.lashline': 'Lash Line Enhancement', 'pmu.lashline.desc': 'Pigment placed between the lash roots to make lashes appear thicker and more voluminous.',
-      'pmu.note': 'A free consultation is included with every permanent makeup treatment. Post-care products and detailed aftercare instructions are provided. Results vary by individual but typically last 1–3 years.'
+      'nav.services':'Services','nav.about':'About','nav.team':'Team',
+      'detail.back':'← Back',
+      'detail.title':'Permanent <em>Makeup</em>',
+      'detail.intro':'No more drawing your brows, lips or eyeliner every day. Our expert team offers natural, long-lasting and personalised permanent makeup treatments.',
+      'sec.kas':'Eyebrow Treatments','sec.dudak':'Lip Treatments','sec.goz':'Eye Treatments',
+      'showcase.label':'Professional Application',
+      'pmu.microblading':'Microblading','pmu.microblading.desc':'Hair-stroke technique applied by hand to create natural-looking, full brows. Lasts 12–18 months.',
+      'pmu.ombre':'Ombre / Powder Brows','pmu.ombre.desc':'A shaded brow technique that mimics a makeup effect, fading from inner to outer edge. Ideal for oily and combination skin.',
+      'pmu.combo':'Combo Brows','pmu.combo.desc':'A combination of microblading and ombre techniques for a look that is both natural and full.',
+      'pmu.aqua':'Aqua Brows','pmu.aqua.desc':'An ultra-natural brow technique applied with a digital machine, creating a soft watercolour effect. Suitable for sensitive skin.',
+      'pmu.lipliner':'Lip Liner','pmu.lipliner.desc':'Defines the lip border for a more shapely and attractive appearance.',
+      'pmu.lipblush':'Lip Blush','pmu.lipblush.desc':'Combines liner and fill techniques to give lips a natural colour and a sense of fullness.',
+      'pmu.fullip':'Full Lip Colour','pmu.fullip.desc':'Pigment applied across the entire lip for a permanent lipstick effect. Vivid and defined lips.',
+      'pmu.eyeliner':'Permanent Eyeliner','pmu.eyeliner.desc':'Thin or thick line applied to the upper or lower lid. Defines the eyes and cuts down makeup time.',
+      'pmu.lashline':'Lash Line Enhancement','pmu.lashline.desc':'Pigment placed between the lash roots to make lashes appear thicker and more voluminous.',
+      'pmu.note':'A free consultation is included with every permanent makeup treatment. Post-care products and detailed aftercare instructions are provided. Results vary by individual but typically last 1–3 years.'
     },
     ru: {
-      'nav.services': 'Услуги', 'nav.about': 'О нас', 'nav.team': 'Команда',
-      'detail.back': '← Назад',
-      'detail.title': 'Перманентный <em>макияж</em>',
-      'detail.intro': 'Забудьте о ежедневном нанесении бровей, губ и стрелок. Наши специалисты предлагают естественный, долговременный и индивидуальный перманентный макияж.',
-      'sec.kas': 'Брови', 'sec.dudak': 'Губы', 'sec.goz': 'Глаза',
-      'pmu.microblading': 'Микроблейдинг', 'pmu.microblading.desc': 'Ручная техника нанесения волосковых штрихов для создания естественных и пышных бровей. Держится 12–18 месяцев.',
-      'pmu.ombre': 'Омбре / Пудровые брови', 'pmu.ombre.desc': 'Техника растушёвки с эффектом макияжа, переходящая от внутреннего края к внешнему. Идеально для жирной и комбинированной кожи.',
-      'pmu.combo': 'Комбо-брови', 'pmu.combo.desc': 'Сочетание микроблейдинга и омбре для одновременно естественного и объёмного результата.',
-      'pmu.aqua': 'Акварельные брови', 'pmu.aqua.desc': 'Ультраестественная техника с цифровой машиной, создающая эффект акварели. Подходит для чувствительной кожи.',
-      'pmu.lipliner': 'Контур губ', 'pmu.lipliner.desc': 'Чёткий контур губ для более выразительного и привлекательного вида.',
-      'pmu.lipblush': 'Lip Blush', 'pmu.lipblush.desc': 'Сочетание контура и заливки для естественного цвета и ощущения объёма губ.',
-      'pmu.fullip': 'Полная заливка губ', 'pmu.fullip.desc': 'Пигмент наносится на всю поверхность губ для эффекта стойкой помады. Яркие и чёткие губы.',
-      'pmu.eyeliner': 'Перманентная подводка', 'pmu.eyeliner.desc': 'Тонкая или широкая линия на верхнем или нижнем веке. Выразительный взгляд и экономия времени на макияж.',
-      'pmu.lashline': 'Межресничное заполнение', 'pmu.lashline.desc': 'Пигмент между корнями ресниц для более густого и насыщенного вида.',
-      'pmu.note': 'Каждая процедура перманентного макияжа включает бесплатную консультацию. Мы предоставляем средства по уходу и подробные инструкции. Результат индивидуален, в среднем сохраняется 1–3 года.'
+      'nav.services':'Услуги','nav.about':'О нас','nav.team':'Команда',
+      'detail.back':'← Назад',
+      'detail.title':'Перманентный <em>макияж</em>',
+      'detail.intro':'Забудьте о ежедневном нанесении бровей, губ и стрелок. Наши специалисты предлагают естественный, долговременный и индивидуальный перманентный макияж.',
+      'sec.kas':'Брови','sec.dudak':'Губы','sec.goz':'Глаза',
+      'showcase.label':'Профессиональное нанесение',
+      'pmu.microblading':'Микроблейдинг','pmu.microblading.desc':'Ручная техника нанесения волосковых штрихов для создания естественных и пышных бровей. Держится 12–18 месяцев.',
+      'pmu.ombre':'Омбре / Пудровые брови','pmu.ombre.desc':'Техника растушёвки с эффектом макияжа, переходящая от внутреннего края к внешнему. Идеально для жирной и комбинированной кожи.',
+      'pmu.combo':'Комбо-брови','pmu.combo.desc':'Сочетание микроблейдинга и омбре для одновременно естественного и объёмного результата.',
+      'pmu.aqua':'Акварельные брови','pmu.aqua.desc':'Ультраестественная техника с цифровой машиной, создающая эффект акварели. Подходит для чувствительной кожи.',
+      'pmu.lipliner':'Контур губ','pmu.lipliner.desc':'Чёткий контур губ для более выразительного и привлекательного вида.',
+      'pmu.lipblush':'Lip Blush','pmu.lipblush.desc':'Сочетание контура и заливки для естественного цвета и ощущения объёма губ.',
+      'pmu.fullip':'Полная заливка губ','pmu.fullip.desc':'Пигмент наносится на всю поверхность губ для эффекта стойкой помады. Яркие и чёткие губы.',
+      'pmu.eyeliner':'Перманентная подводка','pmu.eyeliner.desc':'Тонкая или широкая линия на верхнем или нижнем веке. Выразительный взгляд и экономия времени на макияж.',
+      'pmu.lashline':'Межресничное заполнение','pmu.lashline.desc':'Пигмент между корнями ресниц для более густого и насыщенного вида.',
+      'pmu.note':'Каждая процедура перманентного макияжа включает бесплатную консультацию. Мы предоставляем средства по уходу и подробные инструкции. Результат индивидуален, в среднем сохраняется 1–3 года.'
     }
   };
 
   const langButtons = document.querySelectorAll('.lang-btn');
-
   function setLanguage(lang) {
     const dict = translations[lang];
     if (!dict) return;
@@ -205,9 +333,7 @@
     langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
     try { localStorage.setItem('hlx-lang', lang); } catch(e) {}
   }
-
   langButtons.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
-
   let initialLang = 'tr';
   try { const s = localStorage.getItem('hlx-lang'); if (s && translations[s]) initialLang = s; } catch(e) {}
   setLanguage(initialLang);
