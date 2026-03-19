@@ -200,10 +200,77 @@
     font-weight: 400;
   }
 
-  .whatsapp-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+  .note-box {
+    background: var(--c2);
+    border-left: 3px solid var(--c4);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--mid);
+  }
+
+  .aftercare {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5rem 5rem;
+  }
+
+  .aftercare-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .aftercare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .aftercare-card {
+    background: white;
+    border: 1px solid var(--c3);
+    padding: 2rem;
+  }
+
+  .aftercare-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .aftercare-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .aftercare-card ul li {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--mid);
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  .aftercare-card ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--c4);
+  }
+
+  @media (max-width: 768px) {
+    .aftercare { padding: 0 1.5rem 3rem; }
+    .aftercare-grid { grid-template-columns: 1fr; gap: 1rem; }
+  }
     width: 60px;
     height: 60px;
     background: #25D366;
@@ -320,9 +387,66 @@
     İstenmeyen tüylerden kalıcı olarak kurtulun! Son teknoloji lazer cihazlarımızla bayanlara özel epilasyon hizmeti sunuyoruz.
   </p>
 
+  <div class="aftercare">
+    <h2 class="aftercare-title" data-i18n="prebefore.title">İşlem Öncesi Öneriler</h2>
+    <div class="aftercare-grid">
+      <div class="aftercare-card">
+        <h4 data-i18n="prebefore.h1">7 Gün Önce</h4>
+        <ul>
+          <li data-i18n="prebefore.p1">Güneşlenmeyin ve solaryuma gitmeyin.</li>
+          <li data-i18n="prebefore.p2">Bronzlaştırıcı krem kullanmayın.</li>
+          <li data-i18n="prebefore.p3">Ağda, şekerleme veya epilatör kullanmayın — sadece tıraş yapabilirsiniz.</li>
+        </ul>
+      </div>
+      <div class="aftercare-card">
+        <h4 data-i18n="prebefore.h2">1 Gün Önce</h4>
+        <ul>
+          <li data-i18n="prebefore.p4">Epilasyon yapılacak bölgeyi tıraş edin (cilt temiz ve çiziksiz olmalı).</li>
+          <li data-i18n="prebefore.p5">Bölgede krem, peeling, asit veya alkol içeren ürünler kullanmayın.</li>
+        </ul>
+      </div>
+      <div class="aftercare-card">
+        <h4 data-i18n="prebefore.h3">İşlem Günü</h4>
+        <ul>
+          <li data-i18n="prebefore.p6">Cilt temiz, kuru ve kozmetiksiz olmalı; yağ, krem veya deodorant kullanmayın.</li>
+          <li data-i18n="prebefore.p7">Işığa karşı hassasiyeti artıran ilaçlar almayın (bazı antibiyotikler veya retinoidler).</li>
+          <li data-i18n="prebefore.p8">Antibiyotik kullanıyorsanız, işlem tedavi bittikten en az 1 hafta sonra yapılmalıdır.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="aftercare">
+    <h2 class="aftercare-title" data-i18n="aftercare.title">İşlem Sonrası Öneriler</h2>
+    <div class="aftercare-grid">
+      <div class="aftercare-card">
+        <h4 data-i18n="aftercare.h1">İşlem Sonrası</h4>
+        <ul>
+          <li data-i18n="aftercare.p1">1–2 gün sauna veya hamama gitmeyin.</li>
+          <li data-i18n="aftercare.p2">İlk gün sıcak banyo yapmayın.</li>
+          <li data-i18n="aftercare.p3">Bölgeye yağ, peeling veya aktif bileşenli krem uygulamayın.</li>
+          <li data-i18n="aftercare.p4">Tüyleri cımbız, ağda veya depilasyon kremi ile çekmeyin; sadece tıraş yapılabilir.</li>
+        </ul>
+      </div>
+      <div class="aftercare-card">
+        <h4 data-i18n="aftercare.h2">2–3 Gün Boyunca</h4>
+        <ul>
+          <li data-i18n="aftercare.p5">Katı sabun yerine yumuşak jel veya köpük kullanın.</li>
+          <li data-i18n="aftercare.p6">Sert lif veya peeling kullanmayın.</li>
+          <li data-i18n="aftercare.p7">Sıkı giysilerden kaçının.</li>
+        </ul>
+      </div>
+      <div class="aftercare-card">
+        <h4 data-i18n="aftercare.h3">Dışarı Çıkarken</h4>
+        <ul>
+          <li data-i18n="aftercare.p8">İşlem yapılan bölgelere en az SPF 50+ güneş koruyucu uygulayın.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <h2 class="subsec" data-i18n="sec.tekil">Tekil Bölgeler</h2>
   <div class="content-grid">
-    <div class="service-item"><h3 data-i18n="area.face">Yüz</h3></div>
     <div class="service-item"><h3 data-i18n="area.abdomen">Karın</h3></div>
     <div class="service-item"><h3 data-i18n="area.nape">Ense</h3></div>
     <div class="service-item"><h3 data-i18n="area.waist">Bel</h3></div>
@@ -384,7 +508,33 @@
       'pkg.full': 'Tepeden Tırnağa',
       'pkg.combo1': 'Tüm Bacak + Koltuk Altı + Bikini + Tüm Kol',
       'pkg.combo2': 'Tüm Kol + Tüm Bacak',
-      'pkg.combo3': 'Bikini + Koltuk Altı + Yüz'
+      'pkg.combo3': 'Bikini + Koltuk Altı + Yüz',
+
+      'prebefore.title': 'İşlem Öncesi Öneriler',
+      'prebefore.h1': '7 Gün Önce',
+      'prebefore.p1': 'Güneşlenmeyin ve solaryuma gitmeyin.',
+      'prebefore.p2': 'Bronzlaştırıcı krem kullanmayın.',
+      'prebefore.p3': 'Ağda, şekerleme veya epilatör kullanmayın — sadece tıraş yapabilirsiniz.',
+      'prebefore.h2': '1 Gün Önce',
+      'prebefore.p4': 'Epilasyon yapılacak bölgeyi tıraş edin (cilt temiz ve çiziksiz olmalı).',
+      'prebefore.p5': 'Bölgede krem, peeling, asit veya alkol içeren ürünler kullanmayın.',
+      'prebefore.h3': 'İşlem Günü',
+      'prebefore.p6': 'Cilt temiz, kuru ve kozmetiksiz olmalı; yağ, krem veya deodorant kullanmayın.',
+      'prebefore.p7': 'Işığa karşı hassasiyeti artıran ilaçlar almayın (bazı antibiyotikler veya retinoidler).',
+      'prebefore.p8': 'Antibiyotik kullanıyorsanız, işlem tedavi bittikten en az 1 hafta sonra yapılmalıdır.',
+
+      'aftercare.title': 'İşlem Sonrası Öneriler',
+      'aftercare.h1': 'İşlem Sonrası',
+      'aftercare.p1': '1–2 gün sauna veya hamama gitmeyin.',
+      'aftercare.p2': 'İlk gün sıcak banyo yapmayın.',
+      'aftercare.p3': 'Bölgeye yağ, peeling veya aktif bileşenli krem uygulamayın.',
+      'aftercare.p4': 'Tüyleri cımbız, ağda veya depilasyon kremi ile çekmeyin; sadece tıraş yapılabilir.',
+      'aftercare.h2': '2–3 Gün Boyunca',
+      'aftercare.p5': 'Katı sabun yerine yumuşak jel veya köpük kullanın.',
+      'aftercare.p6': 'Sert lif veya peeling kullanmayın.',
+      'aftercare.p7': 'Sıkı giysilerden kaçının.',
+      'aftercare.h3': 'Dışarı Çıkarken',
+      'aftercare.p8': 'İşlem yapılan bölgelere en az SPF 50+ güneş koruyucu uygulayın.'
     },
     en: {
       'nav.services': 'Services',
@@ -415,8 +565,33 @@
       'pkg.full': 'Head to Toe',
       'pkg.combo1': 'Full Leg + Underarm + Bikini + Full Arm',
       'pkg.combo2': 'Full Arm + Full Leg',
-      'pkg.combo3': 'Bikini + Underarm + Face'
-    },
+      'pkg.combo3': 'Bikini + Underarm + Face',
+
+      'prebefore.title': 'Pre-Treatment Recommendations',
+      'prebefore.h1': '7 Days Before',
+      'prebefore.p1': 'Avoid sun exposure and tanning beds.',
+      'prebefore.p2': 'Do not use self-tanning creams.',
+      'prebefore.p3': 'Do not wax, sugar or use an epilator — shaving only.',
+      'prebefore.h2': '1 Day Before',
+      'prebefore.p4': 'Shave the area to be treated (skin should be clean and unscratched).',
+      'prebefore.p5': 'Do not apply creams, peeling, acids or alcohol-based products to the area.',
+      'prebefore.h3': 'On the Day',
+      'prebefore.p6': 'Skin must be clean, dry and product-free; no oils, creams or deodorant.',
+      'prebefore.p7': 'Avoid medications that increase light sensitivity (e.g. certain antibiotics or retinoids).',
+      'prebefore.p8': 'If taking antibiotics, the treatment must be scheduled at least 1 week after the course ends.',
+
+      'aftercare.title': 'Post-Treatment Care',
+      'aftercare.h1': 'Immediately After',
+      'aftercare.p1': 'Avoid sauna or steam room for 1–2 days.',
+      'aftercare.p2': 'No hot baths on the first day.',
+      'aftercare.p3': 'Do not apply oils, peeling or active-ingredient creams to the treated area.',
+      'aftercare.p4': 'Do not tweeze, wax or use depilatory cream; shaving only until hairs shed naturally.',
+      'aftercare.h2': 'For 2–3 Days',
+      'aftercare.p5': 'Replace bar soap with a gentle gel or foam cleanser.',
+      'aftercare.p6': 'Avoid rough exfoliating mitts or scrubs.',
+      'aftercare.p7': 'Wear loose-fitting clothing to prevent irritation.',
+      'aftercare.h3': 'When Going Outside',
+      'aftercare.p8': 'Apply at least SPF 50+ sunscreen to treated areas.'
     ru: {
       'nav.services': 'Услуги',
       'nav.about': 'О нас',
@@ -446,8 +621,33 @@
       'pkg.full': 'С головы до ног',
       'pkg.combo1': 'Вся нога + Подмышки + Бикини + Вся рука',
       'pkg.combo2': 'Вся рука + Вся нога',
-      'pkg.combo3': 'Бикини + Подмышки + Лицо'
-    }
+      'pkg.combo3': 'Бикини + Подмышки + Лицо',
+
+      'prebefore.title': 'Рекомендации перед процедурой',
+      'prebefore.h1': 'За 7 дней',
+      'prebefore.p1': 'Избегайте загара и солярия.',
+      'prebefore.p2': 'Не используйте автозагар.',
+      'prebefore.p3': 'Не делайте восковую, сахарную депиляцию и не используйте эпилятор — только бритьё.',
+      'prebefore.h2': 'За 1 день',
+      'prebefore.p4': 'Побрейте зону обработки (кожа должна быть чистой и без царапин).',
+      'prebefore.p5': 'Не наносите кремы, пилинги, кислоты или спиртосодержащие средства на зону.',
+      'prebefore.h3': 'В день процедуры',
+      'prebefore.p6': 'Кожа должна быть чистой, сухой и без косметики; без масел, кремов и дезодоранта.',
+      'prebefore.p7': 'Не принимайте препараты, повышающие светочувствительность (некоторые антибиотики или ретиноиды).',
+      'prebefore.p8': 'При приёме антибиотиков процедуру можно проводить не ранее чем через 1 неделю после окончания курса.',
+
+      'aftercare.title': 'Рекомендации после процедуры',
+      'aftercare.h1': 'Сразу после процедуры',
+      'aftercare.p1': 'Избегайте сауны и хамама 1–2 дня.',
+      'aftercare.p2': 'В первый день не принимайте горячую ванну.',
+      'aftercare.p3': 'Не наносите масла, пилинги или кремы с активными компонентами на обработанную зону.',
+      'aftercare.p4': 'Не удаляйте волосы пинцетом, воском или кремом-депилятором; допускается только бритьё.',
+      'aftercare.h2': 'В течение 2–3 дней',
+      'aftercare.p5': 'Замените твёрдое мыло мягким гелем или пенкой.',
+      'aftercare.p6': 'Не используйте жёсткие мочалки и скрабы.',
+      'aftercare.p7': 'Избегайте тесной одежды, чтобы не раздражать кожу.',
+      'aftercare.h3': 'На улице',
+      'aftercare.p8': 'Наносите солнцезащитный крем не менее SPF 50+ на обработанные зоны.'
   };
 
   const langButtons = document.querySelectorAll('.lang-btn');

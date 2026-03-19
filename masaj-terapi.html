@@ -3,282 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Masaj & Terapi — Harmony Lux Beauty</title>
+<title>Silhouette ANIWA V8C1 — Harmony Lux Beauty</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --c1: #F8FAFC;
-    --c2: #D9EAFD;
-    --c3: #BCCCDC;
-    --c4: #9AA6B2;
-    --dark: #1e2d38;
-    --mid: #3d5260;
+  :root { --c1:#F8FAFC; --c2:#D9EAFD; --c3:#BCCCDC; --c4:#9AA6B2; --dark:#1e2d38; --mid:#3d5260; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--c1); color:var(--dark); font-family:'Jost',sans-serif; font-weight:300; }
+
+  nav { position:fixed; top:0; left:0; right:0; z-index:500; padding:1.6rem 5rem; display:flex; align-items:center; justify-content:space-between; background:rgba(248,250,252,0.92); backdrop-filter:blur(20px); box-shadow:0 1px 0 var(--c3); }
+  .logo { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:600; letter-spacing:0.1em; color:var(--dark); text-decoration:none; }
+  .logo em { font-style:italic; color:var(--c4); }
+  nav ul { list-style:none; display:flex; gap:3rem; }
+  .nav-right { display:flex; align-items:center; gap:1.75rem; }
+  .lang-switch { display:inline-flex; align-items:center; gap:0.15rem; padding:2px; border-radius:999px; border:1px solid var(--c3); background:rgba(248,250,252,0.8); backdrop-filter:blur(12px); }
+  .lang-btn { border:none; background:transparent; color:var(--mid); font-family:'Jost',sans-serif; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; padding:0.25rem 0.7rem; border-radius:999px; cursor:pointer; transition:background 0.25s,color 0.25s; }
+  .lang-btn.active { background:var(--dark); color:var(--c1); }
+  nav ul a { text-decoration:none; color:var(--mid); font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; position:relative; padding-bottom:4px; }
+  nav ul a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--c4); transition:width 0.3s; }
+  nav ul a:hover::after { width:100%; }
+
+  .hero-detail { padding:10rem 5rem 5rem; max-width:1200px; margin:0 auto; }
+  .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--c4); text-decoration:none; margin-bottom:3rem; transition:color 0.3s; }
+  .back-link:hover { color:var(--dark); }
+  h1 { font-family:'Playfair Display',serif; font-size:clamp(2.8rem,5vw,5rem); font-weight:300; line-height:1.1; margin-bottom:0.5rem; }
+  h1 em { font-style:italic; color:var(--c4); }
+  .device-tag { font-size:0.75rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--c4); margin-bottom:2rem; display:block; }
+  .intro { font-size:1.05rem; line-height:1.85; color:var(--mid); margin-bottom:4rem; max-width:760px; }
+
+  /* PROGRAM CARDS */
+  .programs { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+
+  .prog-card { background:white; border:1px solid var(--c3); padding:2.5rem; transition:all 0.3s; display:flex; flex-direction:column; gap:1.5rem; }
+  .prog-card:hover { box-shadow:0 12px 40px rgba(154,166,178,0.22); transform:translateY(-4px); }
+
+  .prog-card h3 { font-family:'Playfair Display',serif; font-size:1.55rem; font-weight:400; color:var(--dark); }
+  .prog-card .tagline { font-size:0.88rem; line-height:1.75; color:var(--mid); }
+
+  .prog-meta { display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
+  .prog-duration { font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--c4); }
+  .prog-zones { font-size:0.78rem; color:var(--mid); }
+
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+
+  .list-block h4 { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--c4); margin-bottom:0.6rem; }
+  .list-block ul { list-style:none; }
+  .list-block ul li { font-size:0.85rem; line-height:1.7; color:var(--mid); padding-left:0.9rem; position:relative; }
+  .list-block ul li::before { content:'—'; position:absolute; left:0; color:var(--c3); }
+
+  .whatsapp-btn { position:fixed; bottom:30px; right:30px; width:60px; height:60px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:1000; transition:all 0.3s ease; text-decoration:none; }
+  .whatsapp-btn:hover { transform:scale(1.1); box-shadow:0 6px 30px rgba(37,211,102,0.6); }
+  .whatsapp-btn svg { width:32px; height:32px; fill:white; }
+
+  @media (max-width:900px) {
+    .programs { grid-template-columns:1fr; }
+    .two-col { grid-template-columns:1fr; }
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--c1);
-    color: var(--dark);
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-  }
-
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 500;
-    padding: 1.6rem 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(248,250,252,0.92);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 1px 0 var(--c3);
-  }
-
-  .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.7rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--dark);
-    text-decoration: none;
-  }
-
-  .logo em { font-style: italic; color: var(--c4); }
-
-  nav ul { list-style: none; display: flex; gap: 3rem; }
-
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1.75rem;
-  }
-
-  .lang-switch {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.15rem;
-    padding: 2px;
-    border-radius: 999px;
-    border: 1px solid var(--c3);
-    background: rgba(248,250,252,0.8);
-    backdrop-filter: blur(12px);
-  }
-
-  .lang-btn {
-    border: none;
-    background: transparent;
-    color: var(--mid);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.7rem;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: background 0.25s, color 0.25s;
-  }
-
-  .lang-btn.active {
-    background: var(--dark);
-    color: var(--c1);
-  }
-
-  nav ul a {
-    text-decoration: none;
-    color: var(--mid);
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 4px;
-  }
-
-  nav ul a::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 1px;
-    background: var(--c4);
-    transition: width 0.3s;
-  }
-
-  nav ul a:hover::after { width: 100%; }
-
-  .hero-detail {
-    padding: 10rem 5rem 5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--c4);
-    text-decoration: none;
-    margin-bottom: 3rem;
-    transition: color 0.3s;
-  }
-
-  .back-link:hover { color: var(--dark); }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 5vw, 5rem);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 2rem;
-  }
-
-  h1 em { font-style: italic; color: var(--c4); }
-
-  .intro {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--mid);
-    margin-bottom: 4rem;
-    max-width: 800px;
-  }
-
-  .content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 5rem;
-  }
-
-  .service-item {
-    background: white;
-    padding: 2.5rem;
-    border: 1px solid var(--c3);
-    transition: all 0.3s;
-  }
-
-  .service-item:hover {
-    box-shadow: 0 10px 40px rgba(154,166,178,0.2);
-    transform: translateY(-5px);
-  }
-
-  .service-item h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    color: var(--dark);
-  }
-
-  .service-item p {
-    font-size: 0.9rem;
-    line-height: 1.8;
-    color: var(--mid);
-    margin-bottom: 1.5rem;
-  }
-
-  .price {
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--c4);
-    font-weight: 400;
-  }
-
-  .whatsapp-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .whatsapp-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
-  }
-
-  .whatsapp-btn svg {
-    width: 32px;
-    height: 32px;
-    fill: white;
-  }
-
-  /* MOBILE RESPONSIVE */
-  @media (max-width: 768px) {
-    nav {
-      padding: 1rem 1.5rem;
-    }
-
-    .logo {
-      font-size: 1.3rem;
-    }
-
-    nav ul {
-      display: none;
-    }
-
-    .nav-right {
-      margin-left: auto;
-    }
-
-    .hero-detail {
-      padding: 8rem 1.5rem 3rem;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-    }
-
-    .intro {
-      font-size: 1rem;
-      margin-bottom: 3rem;
-    }
-
-    .content-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .service-item {
-      padding: 2rem;
-    }
-
-    .whatsapp-btn {
-      width: 50px;
-      height: 50px;
-      bottom: 20px;
-      right: 20px;
-    }
-
-    .whatsapp-btn svg {
-      width: 26px;
-      height: 26px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 2.2rem;
-    }
-
-    .service-item h3 {
-      font-size: 1.5rem;
-    }
+  @media (max-width:768px) {
+    nav { padding:1rem 1.5rem; }
+    .logo { font-size:1.3rem; }
+    nav ul { display:none; }
+    .nav-right { margin-left:auto; }
+    .hero-detail { padding:8rem 1.5rem 3rem; }
+    h1 { font-size:2.4rem; }
+    .whatsapp-btn { width:50px; height:50px; bottom:20px; right:20px; }
+    .whatsapp-btn svg { width:26px; height:26px; }
   }
 </style>
 </head>
@@ -302,216 +91,234 @@
 
 <div class="hero-detail">
   <a href="index.html#services" class="back-link" data-i18n="detail.back">← Geri Dön</a>
-  
-  <h1 data-i18n="detail.title">Masaj &amp; <em>Terapi</em></h1>
-  
-  <p class="intro" data-i18n="detail.intro">
-    Günlük stresin yorgunluğundan arının, bedeninizi ve zihninizi yenileyin. Profesyonel terapistlerimiz, 
-    geleneksel ve modern masaj tekniklerini birleştirerek size özel bir rahatlama deneyimi sunar. 
-    Her seans sonunda kendinizi yenilenmiş hissedeceksiniz.
-  </p>
+  <span class="device-tag">SILHOUETTE ANIWA V8C1</span>
+  <h1 data-i18n="detail.title">Vücut <em>Terapisi</em></h1>
+  <p class="intro" data-i18n="detail.intro">Vakumlu roller masajı, RF-lifting ve kızılötesi ısı teknolojilerini bir arada kullanan Silhouette ANIWA V8C1 ile lenf drenajı, vücut şekillendirme, anti-selülit ve yüz lifting programları sunuyoruz.</p>
 
-  <div class="content-grid">
-    <div class="service-item">
-      <h3 data-i18n="item1.title">Klasik Masaj</h3>
-      <p data-i18n="item1.desc">Tüm vücutta uygulanan klasik rahatlatıcı masaj.</p>
-      <div class="price" data-i18n="item1.price">Fiyat için randevu alın</div>
+  <div class="programs">
+
+    <!-- Lymphatic Detox -->
+    <div class="prog-card">
+      <div>
+        <h3 data-i18n="p1.title">Silhouette Lymphatic Detox</h3>
+        <p class="tagline" data-i18n="p1.tagline">Lenf drenajı detoks programı — ödem azaltma ve mikro dolaşım iyileştirme.</p>
+      </div>
+      <div class="two-col">
+        <div class="list-block">
+          <h4 data-i18n="lbl.tech">Teknolojiler</h4>
+          <ul>
+            <li data-i18n="p1.t1">Vakumlu roller masajı</li>
+            <li data-i18n="p1.t2">Kızılötesi doku ısıtması</li>
+            <li data-i18n="p1.t3">Lenf sistemi stimülasyonu</li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <h4 data-i18n="lbl.effects">Etkiler</h4>
+          <ul>
+            <li data-i18n="p1.e1">Fazla sıvının atılması</li>
+            <li data-i18n="p1.e2">Ödemlerin azalması</li>
+            <li data-i18n="p1.e3">Cilt tonusunun iyileşmesi</li>
+            <li data-i18n="p1.e4">Vücut şekillendirmeye hazırlık</li>
+          </ul>
+        </div>
+      </div>
+      <div class="prog-meta">
+        <span class="prog-duration" data-i18n="p1.dur">⏱ 40 dk</span>
+        <span class="prog-zones" data-i18n="p1.zones">Bölgeler: karın, kalça, basen, kollar</span>
+      </div>
     </div>
-    <div class="service-item">
-      <h3 data-i18n="item2.title">Klasik Masaj (90 dk)</h3>
-      <p data-i18n="item2.desc">90 dakika ve üzeri klasik masaj.</p>
-      <div class="price" data-i18n="item2.price">Fiyat için randevu alın</div>
+
+    <!-- Body Sculpt -->
+    <div class="prog-card">
+      <div>
+        <h3 data-i18n="p2.title">Silhouette Body Sculpt</h3>
+        <p class="tagline" data-i18n="p2.tagline">Yoğun vücut şekillendirme programı.</p>
+      </div>
+      <div class="two-col">
+        <div class="list-block">
+          <h4 data-i18n="lbl.tech">Teknolojiler</h4>
+          <ul>
+            <li data-i18n="p2.t1">Ultrasonik kavitasyon</li>
+            <li data-i18n="p2.t2">Vakumlu roller masajı</li>
+            <li data-i18n="p2.t3">RF-lifting</li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <h4 data-i18n="lbl.effects">Etkiler</h4>
+          <ul>
+            <li data-i18n="p2.e1">Vücut hacimlerinin azalması</li>
+            <li data-i18n="p2.e2">Vücut hatlarının düzelmesi</li>
+            <li data-i18n="p2.e3">Cilt elastikiyetinin artması</li>
+            <li data-i18n="p2.e4">Kolajen stimülasyonu</li>
+          </ul>
+        </div>
+      </div>
+      <div class="prog-meta">
+        <span class="prog-duration" data-i18n="p2.dur">⏱ 50 dk</span>
+        <span class="prog-zones" data-i18n="p2.zones">Bölgeler: karın, yanlar, kalça, kollar</span>
+      </div>
     </div>
-    <div class="service-item">
-      <h3 data-i18n="item3.title">Spor Masajı</h3>
-      <p data-i18n="item3.desc">Sporcular ve aktif yaşam tarzına sahip kişiler için özel masaj.</p>
-      <div class="price" data-i18n="item3.price">Fiyat için randevu alın</div>
+
+    <!-- Anti-Cellulite -->
+    <div class="prog-card">
+      <div>
+        <h3 data-i18n="p3.title">Silhouette Anti-Cellulite Therapy</h3>
+        <p class="tagline" data-i18n="p3.tagline">Yoğun anti-selülit terapisi.</p>
+      </div>
+      <div class="two-col">
+        <div class="list-block">
+          <h4 data-i18n="lbl.tech">Teknolojiler</h4>
+          <ul>
+            <li data-i18n="p3.t1">Roller-vakum masajı</li>
+            <li data-i18n="p3.t2">RF-lifting</li>
+            <li data-i18n="p3.t3">Kızılötesi ısı</li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <h4 data-i18n="lbl.effects">Etkiler</h4>
+          <ul>
+            <li data-i18n="p3.e1">Selülit görünümünün azalması</li>
+            <li data-i18n="p3.e2">Cilt dokusunun düzelmesi</li>
+            <li data-i18n="p3.e3">Kan dolaşımının iyileşmesi</li>
+            <li data-i18n="p3.e4">Cilt yoğunluğunun artması</li>
+          </ul>
+        </div>
+      </div>
+      <div class="prog-meta">
+        <span class="prog-duration" data-i18n="p3.dur">⏱ 60 dk</span>
+        <span class="prog-zones" data-i18n="p3.zones">Bölgeler: kalça, basen</span>
+      </div>
     </div>
-    <div class="service-item">
-      <h3 data-i18n="item4.title">Sırt Masajı</h3>
-      <p data-i18n="item4.desc">Sırt bölgesine odaklı rahatlatıcı masaj.</p>
-      <div class="price" data-i18n="item4.price">Fiyat için randevu alın</div>
+
+    <!-- RF Face Lift -->
+    <div class="prog-card">
+      <div>
+        <h3 data-i18n="p4.title">Silhouette RF Face Lift</h3>
+        <p class="tagline" data-i18n="p4.tagline">Aparatlı yüz lifting ve yüz hatlarının düzeltilmesi.</p>
+      </div>
+      <div class="two-col">
+        <div class="list-block">
+          <h4 data-i18n="lbl.tech">Teknolojiler</h4>
+          <ul>
+            <li data-i18n="p4.t1">RF-lifting (kolajen üretimi)</li>
+            <li data-i18n="p4.t2">Vakum lenf drenajı</li>
+            <li data-i18n="p4.t3">Kızılötesi mikro dolaşım</li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <h4 data-i18n="lbl.effects">Etkiler</h4>
+          <ul>
+            <li data-i18n="p4.e1">Yüz hattının sıkılaşması</li>
+            <li data-i18n="p4.e2">Çene altının azalması</li>
+            <li data-i18n="p4.e3">Kırışıklıkların azalması</li>
+            <li data-i18n="p4.e4">Tonus ve ışıltının iyileşmesi</li>
+          </ul>
+        </div>
+      </div>
+      <div class="prog-meta">
+        <span class="prog-duration" data-i18n="p4.dur">⏱ 30 dk</span>
+        <span class="prog-zones" data-i18n="p4.zones">Bölgeler: yüz, çene</span>
+      </div>
     </div>
-    <div class="service-item">
-      <h3 data-i18n="item5.title">Kafa ve Yüz Masajı</h3>
-      <p data-i18n="item5.desc">Baş ve yüz bölgesine özel rahatlatıcı masaj.</p>
-      <div class="price" data-i18n="item5.price">Fiyat için randevu alın</div>
-    </div>
-    <div class="service-item">
-      <h3 data-i18n="item6.title">Anti Selülit Masajı Thalgo</h3>
-      <p data-i18n="item6.desc">Thalgo markası ile profesyonel anti selülit masajı.</p>
-      <div class="price" data-i18n="item6.price">Fiyat için randevu alın</div>
-    </div>
-    <div class="service-item">
-      <h3 data-i18n="item7.title">Anti Selülit Masajı</h3>
-      <p data-i18n="item7.desc">Selülit azaltıcı profesyonel masaj uygulaması.</p>
-      <div class="price" data-i18n="item7.price">Fiyat için randevu alın</div>
-    </div>
+
   </div>
 </div>
 
 <a href="https://wa.me/905369343003" target="_blank" class="whatsapp-btn" aria-label="WhatsApp ile iletişime geç">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
 
 <script>
   const translations = {
     tr: {
-      'nav.services': 'Hizmetler',
-      'nav.about': 'Hakkımızda',
-      'nav.team': 'Ekip',
-
-      'detail.back': '← Geri Dön',
-      'detail.title': 'Masaj &amp; <em>Terapi</em>',
-      'detail.intro': 'Günlük stresin yorgunluğundan arının, bedeninizi ve zihninizi yenileyin. Profesyonel terapistlerimiz, geleneksel ve modern masaj tekniklerini birleştirerek size özel bir rahatlama deneyimi sunar. Her seans sonunda kendinizi yenilenmiş hissedeceksiniz.',
-
-      'item1.title': 'Klasik Masaj',
-      'item1.desc': 'Tüm vücutta uygulanan klasik rahatlatıcı masaj.',
-      'item1.price': 'Fiyat için randevu alın',
-
-      'item2.title': 'Klasik Masaj (90 dk)',
-      'item2.desc': '90 dakika ve üzeri klasik masaj.',
-      'item2.price': 'Fiyat için randevu alın',
-
-      'item3.title': 'Spor Masajı',
-      'item3.desc': 'Sporcular ve aktif yaşam tarzına sahip kişiler için özel masaj.',
-      'item3.price': 'Fiyat için randevu alın',
-
-      'item4.title': 'Sırt Masajı',
-      'item4.desc': 'Sırt bölgesine odaklı rahatlatıcı masaj.',
-      'item4.price': 'Fiyat için randevu alın',
-
-      'item5.title': 'Kafa ve Yüz Masajı',
-      'item5.desc': 'Baş ve yüz bölgesine özel rahatlatıcı masaj.',
-      'item5.price': 'Fiyat için randevu alın',
-
-      'item6.title': 'Anti Selülit Masajı Thalgo',
-      'item6.desc': 'Thalgo markası ile profesyonel anti selülit masajı.',
-      'item6.price': 'Fiyat için randevu alın',
-
-      'item7.title': 'Anti Selülit Masajı',
-      'item7.desc': 'Selülit azaltıcı profesyonel masaj uygulaması.',
-      'item7.price': 'Fiyat için randevu alın'
+      'nav.services':'Hizmetler','nav.about':'Hakkımızda','nav.team':'Ekip',
+      'detail.back':'← Geri Dön',
+      'detail.title':'Vücut <em>Terapisi</em>',
+      'detail.intro':'Vakumlu roller masajı, RF-lifting ve kızılötesi ısı teknolojilerini bir arada kullanan Silhouette ANIWA V8C1 ile lenf drenajı, vücut şekillendirme, anti-selülit ve yüz lifting programları sunuyoruz.',
+      'lbl.tech':'Teknolojiler','lbl.effects':'Etkiler',
+      'p1.title':'Silhouette Lymphatic Detox','p1.tagline':'Lenf drenajı detoks programı — ödem azaltma ve mikro dolaşım iyileştirme.',
+      'p1.t1':'Vakumlu roller masajı','p1.t2':'Kızılötesi doku ısıtması','p1.t3':'Lenf sistemi stimülasyonu',
+      'p1.e1':'Fazla sıvının atılması','p1.e2':'Ödemlerin azalması','p1.e3':'Cilt tonusunun iyileşmesi','p1.e4':'Vücut şekillendirmeye hazırlık',
+      'p1.dur':'⏱ 40 dk','p1.zones':'Bölgeler: karın, kalça, basen, kollar',
+      'p2.title':'Silhouette Body Sculpt','p2.tagline':'Yoğun vücut şekillendirme programı.',
+      'p2.t1':'Ultrasonik kavitasyon','p2.t2':'Vakumlu roller masajı','p2.t3':'RF-lifting',
+      'p2.e1':'Vücut hacimlerinin azalması','p2.e2':'Vücut hatlarının düzelmesi','p2.e3':'Cilt elastikiyetinin artması','p2.e4':'Kolajen stimülasyonu',
+      'p2.dur':'⏱ 50 dk','p2.zones':'Bölgeler: karın, yanlar, kalça, kollar',
+      'p3.title':'Silhouette Anti-Cellulite Therapy','p3.tagline':'Yoğun anti-selülit terapisi.',
+      'p3.t1':'Roller-vakum masajı','p3.t2':'RF-lifting','p3.t3':'Kızılötesi ısı',
+      'p3.e1':'Selülit görünümünün azalması','p3.e2':'Cilt dokusunun düzelmesi','p3.e3':'Kan dolaşımının iyileşmesi','p3.e4':'Cilt yoğunluğunun artması',
+      'p3.dur':'⏱ 60 dk','p3.zones':'Bölgeler: kalça, basen',
+      'p4.title':'Silhouette RF Face Lift','p4.tagline':'Aparatlı yüz lifting ve yüz hatlarının düzeltilmesi.',
+      'p4.t1':'RF-lifting (kolajen üretimi)','p4.t2':'Vakum lenf drenajı','p4.t3':'Kızılötesi mikro dolaşım',
+      'p4.e1':'Yüz hattının sıkılaşması','p4.e2':'Çene altının azalması','p4.e3':'Kırışıklıkların azalması','p4.e4':'Tonus ve ışıltının iyileşmesi',
+      'p4.dur':'⏱ 30 dk','p4.zones':'Bölgeler: yüz, çene'
     },
     en: {
-      'nav.services': 'Services',
-      'nav.about': 'About',
-      'nav.team': 'Team',
-
-      'detail.back': '← Back',
-      'detail.title': 'Massage &amp; <em>Therapy</em>',
-      'detail.intro': 'Release the fatigue of everyday life and refresh both body and mind. Our professional therapists combine traditional and modern massage techniques to create a relaxation experience tailored to you. After each session you will feel renewed.',
-
-      'item1.title': 'Classic Massage',
-      'item1.desc': 'Full-body classic relaxing massage.',
-      'item1.price': 'Contact for pricing',
-
-      'item2.title': 'Classic Massage (90 min)',
-      'item2.desc': '90 minutes and above classic massage.',
-      'item2.price': 'Contact for pricing',
-
-      'item3.title': 'Sports Massage',
-      'item3.desc': 'Special massage for athletes and active lifestyles.',
-      'item3.price': 'Contact for pricing',
-
-      'item4.title': 'Back Massage',
-      'item4.desc': 'Relaxing massage focused on the back area.',
-      'item4.price': 'Contact for pricing',
-
-      'item5.title': 'Head and Face Massage',
-      'item5.desc': 'Relaxing massage for head and face area.',
-      'item5.price': 'Contact for pricing',
-
-      'item6.title': 'Anti-Cellulite Massage Thalgo',
-      'item6.desc': 'Professional anti-cellulite massage with Thalgo.',
-      'item6.price': 'Contact for pricing',
-
-      'item7.title': 'Anti-Cellulite Massage',
-      'item7.desc': 'Professional anti-cellulite massage.',
-      'item7.price': 'Contact for pricing'
+      'nav.services':'Services','nav.about':'About','nav.team':'Team',
+      'detail.back':'← Back',
+      'detail.title':'Body <em>Therapy</em>',
+      'detail.intro':'Using Silhouette ANIWA V8C1 — combining vacuum roller massage, RF-lifting and infrared heat — we offer lymphatic detox, body sculpting, anti-cellulite and face lifting programmes.',
+      'lbl.tech':'Technologies','lbl.effects':'Effects',
+      'p1.title':'Silhouette Lymphatic Detox','p1.tagline':'Lymphatic detox programme — reducing oedema and improving microcirculation.',
+      'p1.t1':'Vacuum roller massage','p1.t2':'Infrared tissue heating','p1.t3':'Lymphatic system stimulation',
+      'p1.e1':'Elimination of excess fluid','p1.e2':'Reduction of oedema','p1.e3':'Improved skin tone','p1.e4':'Preparation for body sculpting',
+      'p1.dur':'⏱ 40 min','p1.zones':'Areas: abdomen, hips, waist, arms',
+      'p2.title':'Silhouette Body Sculpt','p2.tagline':'Intensive body sculpting programme.',
+      'p2.t1':'Ultrasonic cavitation','p2.t2':'Vacuum roller massage','p2.t3':'RF-lifting',
+      'p2.e1':'Reduction of body volume','p2.e2':'Improved body contours','p2.e3':'Increased skin elasticity','p2.e4':'Collagen stimulation',
+      'p2.dur':'⏱ 50 min','p2.zones':'Areas: abdomen, flanks, hips, arms',
+      'p3.title':'Silhouette Anti-Cellulite Therapy','p3.tagline':'Intensive anti-cellulite therapy.',
+      'p3.t1':'Roller-vacuum massage','p3.t2':'RF-lifting','p3.t3':'Infrared heat',
+      'p3.e1':'Reduced cellulite appearance','p3.e2':'Smoother skin texture','p3.e3':'Improved blood circulation','p3.e4':'Increased skin density',
+      'p3.dur':'⏱ 60 min','p3.zones':'Areas: hips, waist',
+      'p4.title':'Silhouette RF Face Lift','p4.tagline':'Device-assisted facial lifting and contouring.',
+      'p4.t1':'RF-lifting (collagen production)','p4.t2':'Vacuum lymphatic drainage','p4.t3':'Infrared microcirculation',
+      'p4.e1':'Firmer facial contour','p4.e2':'Reduced double chin','p4.e3':'Fewer wrinkles','p4.e4':'Improved tone and radiance',
+      'p4.dur':'⏱ 30 min','p4.zones':'Areas: face, chin'
     },
     ru: {
-      'nav.services': 'Услуги',
-      'nav.about': 'О нас',
-      'nav.team': 'Команда',
-
-      'detail.back': '← Назад',
-      'detail.title': 'Массаж &amp; <em>Терапия</em>',
-      'detail.intro': 'Снимите усталость и напряжение, накопившиеся за день, и обновите тело и разум. Наши профессиональные терапевты совмещают классические и современные техники массажа, чтобы создать персональный опыт расслабления. После каждого сеанса вы будете чувствовать себя обновлённым.',
-
-      'item1.title': 'Классический массаж',
-      'item1.desc': 'Классический расслабляющий массаж всего тела.',
-      'item1.price': 'Свяжитесь для цен',
-
-      'item2.title': 'Классический массаж (90 мин)',
-      'item2.desc': 'Классический массаж 90 минут и более.',
-      'item2.price': 'Свяжитесь для цен',
-
-      'item3.title': 'Спортивный массаж',
-      'item3.desc': 'Специальный массаж для спортсменов и активного образа жизни.',
-      'item3.price': 'Свяжитесь для цен',
-
-      'item4.title': 'Массаж спины',
-      'item4.desc': 'Расслабляющий массаж области спины.',
-      'item4.price': 'Свяжитесь для цен',
-
-      'item5.title': 'Массаж головы и лица',
-      'item5.desc': 'Расслабляющий массаж головы и лица.',
-      'item5.price': 'Свяжитесь для цен',
-
-      'item6.title': 'Антицеллюлитный массаж Thalgo',
-      'item6.desc': 'Профессиональный антицеллюлитный массаж Thalgo.',
-      'item6.price': 'Свяжитесь для цен',
-
-      'item7.title': 'Антицеллюлитный массаж',
-      'item7.desc': 'Профессиональный антицеллюлитный массаж.',
-      'item7.price': 'Свяжитесь для цен'
+      'nav.services':'Услуги','nav.about':'О нас','nav.team':'Команда',
+      'detail.back':'← Назад',
+      'detail.title':'Терапия <em>тела</em>',
+      'detail.intro':'На аппарате Silhouette ANIWA V8C1 — вакуумный роликовый массаж, RF-лифтинг и инфракрасное тепло — мы предлагаем лимфодренаж, коррекцию фигуры, антицеллюлитную терапию и лифтинг лица.',
+      'lbl.tech':'Технологии','lbl.effects':'Эффекты',
+      'p1.title':'Silhouette Lymphatic Detox','p1.tagline':'Лимфодренажная детокс-программа — уменьшение отёков и улучшение микроциркуляции.',
+      'p1.t1':'Вакуумный роликовый массаж','p1.t2':'Инфракрасный прогрев тканей','p1.t3':'Стимуляция лимфатической системы',
+      'p1.e1':'Выведение лишней жидкости','p1.e2':'Уменьшение отёков','p1.e3':'Улучшение тонуса кожи','p1.e4':'Подготовка к коррекции фигуры',
+      'p1.dur':'⏱ 40 мин','p1.zones':'Зоны: живот, бёдра, талия, руки',
+      'p2.title':'Silhouette Body Sculpt','p2.tagline':'Интенсивная программа коррекции фигуры.',
+      'p2.t1':'Ультразвуковая кавитация','p2.t2':'Вакуумный роликовый массаж','p2.t3':'RF-лифтинг',
+      'p2.e1':'Уменьшение объёмов тела','p2.e2':'Коррекция контуров','p2.e3':'Повышение эластичности кожи','p2.e4':'Стимуляция коллагена',
+      'p2.dur':'⏱ 50 мин','p2.zones':'Зоны: живот, бока, бёдра, руки',
+      'p3.title':'Silhouette Anti-Cellulite Therapy','p3.tagline':'Интенсивная антицеллюлитная терапия.',
+      'p3.t1':'Роликово-вакуумный массаж','p3.t2':'RF-лифтинг','p3.t3':'Инфракрасное тепло',
+      'p3.e1':'Уменьшение целлюлита','p3.e2':'Выравнивание текстуры кожи','p3.e3':'Улучшение кровообращения','p3.e4':'Повышение плотности кожи',
+      'p3.dur':'⏱ 60 мин','p3.zones':'Зоны: бёдра, талия',
+      'p4.title':'Silhouette RF Face Lift','p4.tagline':'Аппаратный лифтинг и коррекция овала лица.',
+      'p4.t1':'RF-лифтинг (выработка коллагена)','p4.t2':'Вакуумный лимфодренаж','p4.t3':'Инфракрасная микроциркуляция',
+      'p4.e1':'Подтяжка овала лица','p4.e2':'Уменьшение второго подбородка','p4.e3':'Разглаживание морщин','p4.e4':'Улучшение тонуса и сияния',
+      'p4.dur':'⏱ 30 мин','p4.zones':'Зоны: лицо, подбородок'
     }
   };
 
   const langButtons = document.querySelectorAll('.lang-btn');
-
   function setLanguage(lang) {
     const dict = translations[lang];
     if (!dict) return;
-
     document.documentElement.lang = lang;
-
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      const value = dict[key];
-      if (value) {
-        el.innerHTML = value;
-      }
+      const val = dict[el.getAttribute('data-i18n')];
+      if (val) el.innerHTML = val;
     });
-
-    langButtons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-
-    try {
-      localStorage.setItem('hlx-lang', lang);
-    } catch (e) {}
+    langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+    try { localStorage.setItem('hlx-lang', lang); } catch(e) {}
   }
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      setLanguage(btn.dataset.lang);
-    });
-  });
-
+  langButtons.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
   let initialLang = 'tr';
-  try {
-    const saved = localStorage.getItem('hlx-lang');
-    if (saved && translations[saved]) {
-      initialLang = saved;
-    }
-  } catch (e) {}
-
+  try { const s = localStorage.getItem('hlx-lang'); if (s && translations[s]) initialLang = s; } catch(e) {}
   setLanguage(initialLang);
 </script>
-
 </body>
 </html>

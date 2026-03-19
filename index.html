@@ -340,6 +340,17 @@
     object-fit: contain;
     border-radius: 32px;
     box-shadow: 0 18px 40px rgba(83, 100, 123, 0.45);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .hero-machine.active {
+    opacity: 1;
+  }
+
+  .machine-slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
   }
 
   .petal {
@@ -1163,7 +1174,14 @@
         <div class="petal p2"></div>
         <div class="petal p3"></div>
         <div class="hero-oval"></div>
-        <img src="mk5.png" alt="Cihaz" class="hero-machine" loading="lazy">
+        <div class="machine-slider">
+          <img src="mk1.png" alt="Cihaz 1" class="hero-machine slide active">
+          <img src="mk2.png" alt="Cihaz 2" class="hero-machine slide">
+          <img src="mk3.png" alt="Cihaz 3" class="hero-machine slide">
+          <img src="mk4.png" alt="Cihaz 4" class="hero-machine slide">
+          <img src="mk5.png" alt="Cihaz 5" class="hero-machine slide">
+          <img src="mk6.png" alt="Cihaz 6" class="hero-machine slide">
+        </div>
         <div class="float-card fc1">
           <div class="fc-num" data-i18n="hero.float.clients.num">2.4K<span style="font-size:1rem;color:var(--c4)">+</span></div>
           <div class="fc-label" data-i18n="hero.float.clients.label">Mutlu Müşteri</div>
@@ -1221,28 +1239,28 @@
       <div class="svc-n">01</div>
       <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
       <div class="svc-name" data-i18n="services.skin.name">Cilt Bakımı</div>
-      <p class="svc-desc" data-i18n="services.skin.desc">Doğal bileşenler ve ileri teknolojilerle cildinizi yenileyin. Kişiye özel bakım protokolleri.</p>
+      <p class="svc-desc" data-i18n="services.skin.desc">Thalgo profesyonel deniz kozmetiği ile Hydrafacial, derin temizlik ve lifting bakımları. Cildinize özel protokol.</p>
       <div class="svc-footer"><span class="svc-price" data-i18n="services.skin.price">Fiyat için randevu alın</span><div class="svc-arr">→</div></div>
     </a>
     <a href="lazer-epilasyon.html" class="svc reveal rd1" style="text-decoration: none; color: inherit;">
       <div class="svc-n">02</div>
       <div class="svc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="8" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="12" x2="8" y2="12" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="12" x2="20" y2="12" stroke-width="2" stroke-linecap="round"/><line x1="6.5" y1="6.5" x2="9.5" y2="9.5" stroke-width="2" stroke-linecap="round"/><line x1="14.5" y1="9.5" x2="17.5" y2="6.5" stroke-width="2" stroke-linecap="round"/><line x1="6.5" y1="17.5" x2="9.5" y2="14.5" stroke-width="2" stroke-linecap="round"/><line x1="14.5" y1="14.5" x2="17.5" y2="17.5" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="6" r="1" fill="currentColor"/><circle cx="18" cy="12" r="1" fill="currentColor"/><circle cx="6" cy="12" r="1" fill="currentColor"/></svg></div>
       <div class="svc-name" data-i18n="services.hair.name">Lazer Epilasyon(Bayan)</div>
-      <p class="svc-desc" data-i18n="services.hair.desc">Son teknoloji lazer yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.</p>
+      <p class="svc-desc" data-i18n="services.hair.desc">Falcon Pro Laser ile kalıcı ve ağrısız epilasyon. Tekil bölgeler ve 8 seanslık paket seçenekleri.</p>
       <div class="svc-footer"><span class="svc-price" data-i18n="services.hair.price">Fiyat için randevu alın</span><div class="svc-arr">→</div></div>
     </a>
     <a href="masaj-terapi.html" class="svc reveal rd2" style="text-decoration: none; color: inherit;">
       <div class="svc-n">03</div>
       <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2c-1.5 0-2.5 1-3 2.5-.5-1.5-1.5-2.5-3-2.5-2 0-3.5 1.5-3.5 3.5 0 4 6.5 9 6.5 9s6.5-5 6.5-9c0-2-1.5-3.5-3.5-3.5z" transform="translate(6 2)"/><path d="M8 14c-1 .5-2 1.5-2 3v5h12v-5c0-1.5-1-2.5-2-3"/><circle cx="12" cy="14" r="1.5"/><path d="M10 16.5c-.5.5-1 1-1 2M14 16.5c.5.5 1 1 1 2"/></svg></div>
       <div class="svc-name" data-i18n="services.massage.name">Masaj &amp; Terapi</div>
-      <p class="svc-desc" data-i18n="services.massage.desc">Stresden arının, vücudunuzu yenileyin. Profesyonel masaj ve holistik terapi seçenekleri.</p>
+      <p class="svc-desc" data-i18n="services.massage.desc">Silhouette ANIWA V8C1 ile lenf drenajı, vücut şekillendirme, anti-selülit ve RF yüz lifting programları.</p>
       <div class="svc-footer"><span class="svc-price" data-i18n="services.massage.price">Fiyat için randevu alın</span><div class="svc-arr">→</div></div>
     </a>
     <a href="emslimfit.html" class="svc reveal rd2" style="text-decoration: none; color: inherit;">
       <div class="svc-n">04</div>
       <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
       <div class="svc-name" data-i18n="services.epilation.name">Emslimfit</div>
-      <p class="svc-desc" data-i18n="services.epilation.desc">EMS teknolojisi ile kilo verme ve kas güçlendirme seansları.</p>
+      <p class="svc-desc" data-i18n="services.epilation.desc">EMS teknolojisi ile kas güçlendirme ve vücut şekillendirme. Randevu ile kişiye özel program.</p>
       <div class="svc-footer"><span class="svc-price" data-i18n="services.epilation.price">Fiyat için randevu alın</span><div class="svc-arr">→</div></div>
     </a>
 
@@ -1387,6 +1405,18 @@
   }, {threshold: 0.1});
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+  // Machine slideshow
+  (function() {
+    const slides = document.querySelectorAll('.machine-slider .slide');
+    if (!slides.length) return;
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 2500);
+  })();
+
   // Language switcher & translations
   const translations = {
     tr: {
@@ -1423,19 +1453,19 @@
       'services.tag': 'Hizmetlerimiz',
       'services.title': 'Size Özel<br><em>Deneyimler</em>',
       'services.skin.name': 'Cilt Bakımı',
-      'services.skin.desc': 'Doğal bileşenler ve ileri teknolojilerle cildinizi yenileyin. Kişiye özel bakım protokolleri.',
+      'services.skin.desc': 'Thalgo profesyonel deniz kozmetiği ile Hydrafacial, derin temizlik ve lifting bakımları. Cildinize özel protokol.',
       'services.skin.price': 'Fiyat için randevu alın',
       'services.hair.name': 'Lazer Epilasyon(Bayan)',
-      'services.hair.desc': 'Son teknoloji lazer yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.',
+      'services.hair.desc': 'Falcon Pro Laser ile kalıcı ve ağrısız epilasyon. Tekil bölgeler ve 8 seanslık paket seçenekleri.',
       'services.hair.price': 'Fiyat için randevu alın',
       'services.massage.name': 'Masaj &amp; Terapi',
-      'services.massage.desc': 'Stresden arının, vücudunuzu yenileyin. Profesyonel masaj ve holistik terapi seçenekleri.',
+      'services.massage.desc': 'Silhouette ANIWA V8C1 ile lenf drenajı, vücut şekillendirme, anti-selülit ve RF yüz lifting programları.',
       'services.massage.price': 'Fiyat için randevu alın',
       'services.makeup.name': 'Lazer Epilasyon(Erkek)',
       'services.makeup.desc': 'Son teknoloji lazer ve IPL yöntemleriyle kalıcı ve ağrısız epilasyon deneyimi.',
       'services.makeup.price': 'Fiyat için randevu alın',
       'services.epilation.name': 'Emslimfit',
-      'services.epilation.desc': 'EMS teknolojisi ile kilo verme ve kas güçlendirme seansları.',
+      'services.epilation.desc': 'EMS teknolojisi ile kas güçlendirme ve vücut şekillendirme. Randevu ile kişiye özel program.',
       'services.epilation.price': 'Fiyat için randevu alın',
       'services.pmu.name': 'Kalıcı Makyaj',
       'services.pmu.desc': 'Kaş, dudak ve göz çizgisi için profesyonel kalıcı makyaj uygulamaları. Doğal ve uzun ömürlü sonuçlar.',
@@ -1532,19 +1562,19 @@
       'services.tag': 'Our Services',
       'services.title': 'Tailor-Made<br><em>Experiences</em>',
       'services.skin.name': 'Facial Care',
-      'services.skin.desc': 'Renew your skin with natural ingredients and advanced technologies. Fully personalized care protocols.',
+      'services.skin.desc': 'Hydrafacial, deep cleansing and lifting treatments with Thalgo professional marine cosmetics. Protocol tailored to your skin.',
       'services.skin.price': 'Contact for pricing',
       'services.hair.name': 'Laser Epilation (Women)',
-      'services.hair.desc': 'Long-lasting and painless epilation experience with state-of-the-art laser methods.',
+      'services.hair.desc': 'Permanent and painless epilation with Falcon Pro Laser. Single areas and 8-session package options.',
       'services.hair.price': 'Contact for pricing',
       'services.massage.name': 'Massage &amp; Therapy',
-      'services.massage.desc': 'Release stress and renew your body. Professional massage and holistic therapy options.',
+      'services.massage.desc': 'Lymphatic detox, body sculpting, anti-cellulite and RF face lifting with Silhouette ANIWA V8C1.',
       'services.massage.price': 'Contact for pricing',
       'services.makeup.name': 'Laser Epilation (Men)',
       'services.makeup.desc': 'Long-lasting and painless epilation experience with state-of-the-art laser and IPL methods.',
       'services.makeup.price': 'Contact for pricing',
       'services.epilation.name': 'Emslimfit',
-      'services.epilation.desc': 'Weight loss and muscle strengthening sessions with EMS technology.',
+      'services.epilation.desc': 'Muscle strengthening and body shaping with EMS technology. Personalised programme by appointment.',
       'services.epilation.price': 'Contact for pricing',
       'services.pmu.name': 'Permanent Makeup',
       'services.pmu.desc': 'Professional permanent makeup for eyebrows, lips and eyeliner. Natural and long-lasting results.',
@@ -1640,19 +1670,19 @@
       'services.tag': 'Наши услуги',
       'services.title': 'Индивидуальные<br><em>Программы</em>',
       'services.skin.name': 'Уход за кожей',
-      'services.skin.desc': 'Обновите кожу с помощью натуральных компонентов и современных технологий. Полностью персонализированные протоколы ухода.',
+      'services.skin.desc': 'Hydrafacial, глубокое очищение и лифтинг с профессиональной морской косметикой Thalgo. Протокол подбирается индивидуально.',
       'services.skin.price': 'Запишитесь для уточнения цены',
       'services.hair.name': 'Лазерная эпиляция (женская)',
-      'services.hair.desc': 'Долговременная и безболезненная эпиляция с использованием новейших лазерных технологий.',
+      'services.hair.desc': 'Постоянная и безболезненная эпиляция с Falcon Pro Laser. Отдельные зоны и пакеты на 8 сеансов.',
       'services.hair.price': 'Запишитесь для уточнения цены',
       'services.massage.name': 'Массаж и терапия',
-      'services.massage.desc': 'Избавьтесь от стресса и обновите своё тело. Профессиональный массаж и холистические методы терапии.',
+      'services.massage.desc': 'Лимфодренаж, коррекция фигуры, антицеллюлитная терапия и RF-лифтинг лица на аппарате Silhouette ANIWA V8C1.',
       'services.massage.price': 'Запишитесь для уточнения цены',
       'services.makeup.name': 'Лазерная эпиляция (мужская)',
       'services.makeup.desc': 'Долговременная и безболезненная эпиляция с использованием новейших лазерных и IPL технологий.',
       'services.makeup.price': 'Запишитесь для уточнения цены',
       'services.epilation.name': 'Emslimfit',
-      'services.epilation.desc': 'Сеансы похудения и укрепления мышц с помощью EMS технологии.',
+      'services.epilation.desc': 'Укрепление мышц и коррекция фигуры с помощью EMS технологии. Индивидуальная программа по записи.',
       'services.epilation.price': 'Запишитесь для уточнения цены',
       'services.pmu.name': 'Перманентный макияж',
       'services.pmu.desc': 'Профессиональный перманентный макияж бровей, губ и контура глаз. Естественный и долговременный результат.',
