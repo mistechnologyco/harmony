@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Harmony Lux Beauty Cilt Bakımı - Hydrafacial, profesyonel cilt bakımı ve leke tedavileri ile cildinizi yenileyin.">
+<meta name="keywords" content="cilt bakımı, hydrafacial, sivilce tedavisi, leke tedavisi, ankara cilt bakımı, güzellik merkezi">
 <title>Cilt Bakımı — Harmony Lux Beauty</title>
+<!-- Google Ads Tracking Placeholder -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXX');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -181,9 +191,18 @@
     margin-bottom: 1.5rem;
   }
 
-  .content-list .service-item { padding: 1.5rem 2rem; }
-  .content-list .service-item .price { display: none; }
-
+  .content-list .service-item { padding: 1.5rem 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+  .category-title {
+    grid-column: 1 / -1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--dark);
+    border-bottom: 1px solid var(--c3);
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: -2rem; 
+  }
   .price {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
@@ -310,46 +329,153 @@
   </p>
 
   <div class="content-grid content-list">
+    <div class="category-title" data-i18n="cat.yuz_temizleme">YÜZ TEMİZLİĞİ</div>
+    
     <div class="service-item">
-      <h3 data-i18n="item1.title">Klasik Cilt Bakımı</h3>
-      <p data-i18n="item1.desc">Cilt tipine göre derin temizlik, buhar, maske ve nemlendirme içeren temel bakım protokolü.</p>
+      <h3 data-i18n="item.hf1.title">Hydrafacial (yüz)</h3>
+      <p data-i18n="item.hf1.desc">Mekanik / kombine / Hydrafacial, bakım cilt tipine göre seçilir.</p>
+      <div class="price"><s style="opacity:0.6">4.000 ₺</s> &nbsp; <span style="color:#c62828; font-weight:500;">2.000 ₺</span></div>
     </div>
+    
     <div class="service-item">
-      <h3 data-i18n="item2.title">Hydrafacial Cilt Bakımı</h3>
-      <p data-i18n="item2.desc">Thalgo / Hydrafacial teknolojisiyle gözenek temizliği, peeling ve yoğun nemlendirme tek seansta.</p>
+      <h3 data-i18n="item.hf2.title">Hydrafacial (yüz + boyun)</h3>
+      <p data-i18n="item.hf2.desc">Mekanik / kombine / Hydrafacial, bakım cilt tipine göre seçilir.</p>
+      <div class="price"><s style="opacity:0.6">4.500 ₺</s> &nbsp; <span style="color:#c62828; font-weight:500;">2.250 ₺</span></div>
     </div>
+
     <div class="service-item">
-      <h3 data-i18n="item3.title">Burun Siyah Nokta Temizleme</h3>
-      <p data-i18n="item3.desc">Burun bölgesindeki siyah noktaların profesyonel ekipmanla nazikçe uzaklaştırılması.</p>
+      <h3 data-i18n="item.hf3.title">Hydrafacial (yüz + boyun + dekolte)</h3>
+      <p data-i18n="item.hf3.desc">Mekanik / kombine / Hydrafacial, bakım cilt tipine göre seçilir.</p>
+      <div class="price"><s style="opacity:0.6">5.000 ₺</s> &nbsp; <span style="color:#c62828; font-weight:500;">2.500 ₺</span></div>
     </div>
+
     <div class="service-item">
-      <h3 data-i18n="item4.title">Peeling Çeşitleri</h3>
-      <p data-i18n="item4.desc">Cilt tipine uygun kimyasal veya enzimatik peeling ile ölü hücre temizliği ve cilt yenilenmesi.</p>
+      <h3 data-i18n="item.hf4.title">Hydrafacial + yüz masajı</h3>
+      <p data-i18n="item.hf4.desc">Mekanik / kombine / Hydrafacial, bakım cilt tipine göre seçilir.</p>
+      <div class="price"><s style="opacity:0.6">6.500 ₺</s> &nbsp; <span style="color:#c62828; font-weight:500;">3.250 ₺</span></div>
     </div>
+
+    <div class="category-title" data-i18n="cat.thalgo">THALGO BAKIM PROGRAMLARI VE MASKELERİ</div>
+    
     <div class="service-item">
-      <h3 data-i18n="item5.title">Yüz, Boyun, Dekolte Temizliği</h3>
-      <p data-i18n="item5.desc">Yüz, boyun ve dekolte bölgesini kapsayan kapsamlı temizlik ve bakım uygulaması.</p>
+      <h3 data-i18n="item.th1.title">Soin Fondamental de la Mer – Masque Oligo-Marin</h3>
+      <p data-i18n="item.th1.desc">Cilt yenileme ve mineral desteği</p>
+      <div class="price"><s style="opacity:0.6">4.000 ₺</s> &nbsp; <span style="color:#c62828; font-weight:500;">2.000 ₺</span></div>
     </div>
+
     <div class="service-item">
-      <h3 data-i18n="item6.title">Yüz Temizliği ve Peeling</h3>
-      <p data-i18n="item6.desc">Derin gözenek temizliği ile peeling kombinasyonu; mat ve pürüzsüz cilt için.</p>
+      <h3 data-i18n="item.th2.title">Hydra-Marine / Hydra-Soothing Mask</h3>
+      <p data-i18n="item.th2.desc">Derin nemlendirme</p>
+      <div class="price"><s style="opacity:0.6">4.200 ₺</s> &nbsp; <span style="color:#c62828; font-weight:500;">2.100 ₺</span></div>
     </div>
+
     <div class="service-item">
-      <h3 data-i18n="item7.title">Sırt Temizliği ve Peeling</h3>
-      <p data-i18n="item7.desc">Sırt bölgesindeki gözenek tıkanıklıkları ve akne izleri için derin temizlik ve peeling.</p>
+      <h3 data-i18n="item.th3.title">Silicium Lift Programme</h3>
+      <p data-i18n="item.th3.desc">Lifting ve cilt sıkılaştırma</p>
+      <div class="price"><s style="opacity:0.6">4.500 ₺</s> &nbsp; <span style="color:#c62828; font-weight:500;">2.250 ₺</span></div>
     </div>
+
+    <div class="category-title" data-i18n="cat.sirt_temizligi">KOMBİNE SIRT TEMİZLİĞİ</div>
+
     <div class="service-item">
-      <h3 data-i18n="item8.title">Akne Kapsamlı Bakım Prosedürü</h3>
-      <p data-i18n="item8.desc">Aktif akneye yönelik antibakteriyel temizlik, peeling ve yatıştırıcı maske içeren özel protokol.</p>
+      <h3 data-i18n="item.ks1.title">Kombine sırt temizliği</h3>
+      <p data-i18n="item.ks1.desc">Derin temizlik + cilt tipine uygun maske, Thalgo</p>
+      <div class="price"><s style="opacity:0.6">6.500 ₺</s> &nbsp; <span style="color:#c62828; font-weight:500;">3.250 ₺</span></div>
     </div>
+
+    <div class="category-title" data-i18n="cat.peeling">PEELING SEÇENEKLERİ</div>
+    
     <div class="service-item">
-      <h3 data-i18n="item9.title">Post Akne Kompleksi</h3>
-      <p data-i18n="item9.desc">Akne izleri ve hiperpigmentasyon için yoğunlaştırılmış cilt tonu eşitleme ve yenileme bakımı.</p>
+      <h3 data-i18n="item.gcyp.title">Germaine de Capuccini yüzeysel peeling</h3>
+      <p data-i18n="item.gcyp.desc">40–60 dakika</p>
+      <div class="price">2.000 TL</div>
+    </div>
+
+    <div class="service-item">
+      <h3 data-i18n="item.gcao.title">Germaine de Capuccini AOX Expert Lab</h3>
+      <p data-i18n="item.gcao.desc">1 saat</p>
+      <div class="price">2.000 TL</div>
+    </div>
+
+    <div class="category-title" data-i18n="cat.cihazli">CİHAZLI UYGULAMALAR</div>
+    
+    <div class="service-item">
+      <h3 data-i18n="item.yrf.title">Yüz RF lifting</h3>
+      <p data-i18n="item.yrf.desc">45–60 dakika</p>
+      <div class="price">2.500 TL</div>
+    </div>
+
+    <div class="service-item">
+      <h3 data-i18n="item.mam.title">Mikro akım + alginat maske</h3>
+      <p data-i18n="item.mam.desc">60 dakika</p>
+      <div class="price">2.000 TL</div>
+    </div>
+
+    <div class="service-item">
+      <h3 data-i18n="item.irf.title">İğnesiz RF + alginat maske</h3>
+      <p data-i18n="item.irf.desc">60 dakika</p>
+      <div class="price">2.500 TL</div>
+    </div>
+
+    <div class="category-title" data-i18n="cat.yuz_masaji">YÜZ MASAJI</div>
+    
+    <div class="service-item">
+      <h3 data-i18n="item.ym.title">Yüz masajı</h3>
+      <p data-i18n="item.ym.desc">40–60 dakika</p>
+      <div class="price">2.000 TL</div>
+    </div>
+
+    <div class="category-title" data-i18n="cat.kombo">KOMBO UYGULAMALAR</div>
+    
+    <div class="service-item">
+      <h3 data-i18n="item.ymp.title">Yüz masajı + peeling</h3>
+      <p data-i18n="item.ymp.desc">1–1,5 saat</p>
+      <div class="price">2.500 TL</div>
+    </div>
+
+    <div class="service-item">
+      <h3 data-i18n="item.ctym.title">Cilt temizliği + yüz masajı</h3>
+      <p data-i18n="item.ctym.desc">1,5–2 saat</p>
+      <div class="price">4.000 TL</div>
+    </div>
+
+    <div class="category-title" data-i18n="cat.profesyonel">PROFESYONEL BAKIMLAR (Germaine de Capuccini)</div>
+
+    <div class="service-item">
+      <h3 data-i18n="item.vitc.title">Vitamin C</h3>
+      <p data-i18n="item.vitc.desc">Cilt tonunu aydınlatır, daha taze ve ışıltılı bir görünüm sağlar. 1–1,5 saat</p>
+      <div class="price">4.000 TL</div>
+    </div>
+
+    <div class="service-item">
+      <h3 data-i18n="item.wl.title">Wrink Less</h3>
+      <p data-i18n="item.wl.desc">Cilt elastikiyetini destekler, lifting etkisi sağlar ve ince çizgi ile kırışıklık görünümünün azalmasına yardımcı olur. 1–1,5 saat</p>
+      <div class="price">4.000 TL</div>
+    </div>
+
+    <div class="service-item">
+      <h3 data-i18n="item.sl.title">Selectum Lifting</h3>
+      <p data-i18n="item.sl.desc">Yoğun lifting ve yaşlanma karşıtı profesyonel bakım. 1–1,5 saat</p>
+      <div class="price">4.500 TL</div>
+    </div>
+
+    <div class="category-title" data-i18n="cat.goz">GÖZ ÇEVRESİ VE KİRPİK</div>
+    
+    <div class="service-item">
+      <h3 data-i18n="item.ik.title">İpek Kirpik</h3>
+      <p data-i18n="item.ik.desc">Uzun ve dolgun görünümlü kirpik uygulaması.</p>
+      <div class="price" data-i18n="item.fiyat_aliniz">Fiyat Alınız</div>
+    </div>
+
+    <div class="service-item">
+      <h3 data-i18n="item.kl.title">Kaş ve Kirpik Laminasyon</h3>
+      <p data-i18n="item.kl.desc">Kaş ve kirpiklerin yukarı doğru şekillendirilerek belirginleştirilmesi.</p>
+      <div class="price" data-i18n="item.fiyat_aliniz">Fiyat Alınız</div>
     </div>
   </div>
 </div>
 
-<a href="https://wa.me/905369343003" target="_blank" class="whatsapp-btn" aria-label="WhatsApp ile iletişime geç">
+<a href="https://wa.me/905369343003" target="_blank" class="whatsapp-btn" id="track-whatsapp" aria-label="WhatsApp ile iletişime geç">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
   </svg>
@@ -364,26 +490,68 @@
 
       'detail.back': '← Geri Dön',
       'detail.title': 'Cilt <em>Bakımı</em>',
-      'detail.intro': 'Cildiniz, güzelliğinizin en önemli yansımasıdır. Harmony Lux Beauty\'de, doğal bileşenler ve son teknoloji cihazlarla cildinize özel bakım protokolleri uyguluyoruz. Fiyat bilgisi için randevu alabilirsiniz.',
+      'detail.intro': 'Cildiniz, güzelliğinizin en önemli yansımasıdır. Harmony Lux Beauty\'de, doğal bileşenler ve son teknoloji cihazlarla cildinize özel bakım protokolleri uyguluyoruz.',
 
-      'item1.title': 'Klasik Cilt Bakımı',
-      'item1.desc': 'Cilt tipine göre derin temizlik, buhar, maske ve nemlendirme içeren temel bakım protokolü.',
-      'item2.title': 'Hydrafacial Cilt Bakımı',
-      'item2.desc': 'Thalgo / Hydrafacial teknolojisiyle gözenek temizliği, peeling ve yoğun nemlendirme tek seansta.',
-      'item3.title': 'Burun Siyah Nokta Temizleme',
-      'item3.desc': 'Burun bölgesindeki siyah noktaların profesyonel ekipmanla nazikçe uzaklaştırılması.',
-      'item4.title': 'Peeling Çeşitleri',
-      'item4.desc': 'Cilt tipine uygun kimyasal veya enzimatik peeling ile ölü hücre temizliği ve cilt yenilenmesi.',
-      'item5.title': 'Yüz, Boyun, Dekolte Temizliği',
-      'item5.desc': 'Yüz, boyun ve dekolte bölgesini kapsayan kapsamlı temizlik ve bakım uygulaması.',
-      'item6.title': 'Yüz Temizliği ve Peeling',
-      'item6.desc': 'Derin gözenek temizliği ile peeling kombinasyonu; mat ve pürüzsüz cilt için.',
-      'item7.title': 'Sırt Temizliği ve Peeling',
-      'item7.desc': 'Sırt bölgesindeki gözenek tıkanıklıkları ve akne izleri için derin temizlik ve peeling.',
-      'item8.title': 'Akne Kapsamlı Bakım Prosedürü',
-      'item8.desc': 'Aktif akneye yönelik antibakteriyel temizlik, peeling ve yatıştırıcı maske içeren özel protokol.',
-      'item9.title': 'Post Akne Kompleksi',
-      'item9.desc': 'Akne izleri ve hiperpigmentasyon için yoğunlaştırılmış cilt tonu eşitleme ve yenileme bakımı.'
+      'cat.yuz_temizleme': 'YÜZ TEMİZLİĞİ',
+      'item.hf1.title': 'Hydrafacial (yüz)',
+      'item.hf1.desc': 'Mekanik / kombine / Hydrafacial, bakım cilt tipine göre seçilir.',
+      'item.hf2.title': 'Hydrafacial (yüz + boyun)',
+      'item.hf2.desc': 'Mekanik / kombine / Hydrafacial, bakım cilt tipine göre seçilir.',
+      'item.hf3.title': 'Hydrafacial (yüz + boyun + dekolte)',
+      'item.hf3.desc': 'Mekanik / kombine / Hydrafacial, bakım cilt tipine göre seçilir.',
+      'item.hf4.title': 'Hydrafacial + yüz masajı',
+      'item.hf4.desc': 'Mekanik / kombine / Hydrafacial, bakım cilt tipine göre seçilir.',
+      
+      'cat.thalgo': 'THALGO BAKIM PROGRAMLARI VE MASKELERİ',
+      'item.th1.title': 'Soin Fondamental de la Mer – Masque Oligo-Marin',
+      'item.th1.desc': 'Cilt yenileme ve mineral desteği',
+      'item.th2.title': 'Hydra-Marine / Hydra-Soothing Mask',
+      'item.th2.desc': 'Derin nemlendirme',
+      'item.th3.title': 'Silicium Lift Programme',
+      'item.th3.desc': 'Lifting ve cilt sıkılaştırma',
+
+      'cat.sirt_temizligi': 'KOMBİNE SIRT TEMİZLİĞİ',
+      'item.ks1.title': 'Kombine sırt temizliği',
+      'item.ks1.desc': 'Derin temizlik + cilt tipine uygun maske, Thalgo',
+
+      'cat.peeling': 'PEELING SEÇENEKLERİ',
+      'item.gcyp.title': 'Germaine de Capuccini yüzeysel peeling',
+      'item.gcyp.desc': '40–60 dakika',
+      'item.gcao.title': 'Germaine de Capuccini AOX Expert Lab',
+      'item.gcao.desc': '1 saat',
+
+      'cat.cihazli': 'CİHAZLI UYGULAMALAR',
+      'item.yrf.title': 'Yüz RF lifting',
+      'item.yrf.desc': '45–60 dakika',
+      'item.mam.title': 'Mikro akım + alginat maske',
+      'item.mam.desc': '60 dakika',
+      'item.irf.title': 'İğnesiz RF + alginat maske',
+      'item.irf.desc': '60 dakika',
+
+      'cat.yuz_masaji': 'YÜZ MASAJI',
+      'item.ym.title': 'Yüz masajı',
+      'item.ym.desc': '40–60 dakika',
+
+      'cat.kombo': 'KOMBO UYGULAMALAR',
+      'item.ymp.title': 'Yüz masajı + peeling',
+      'item.ymp.desc': '1–1,5 saat',
+      'item.ctym.title': 'Cilt temizliği + yüz masajı',
+      'item.ctym.desc': '1,5–2 saat',
+
+      'cat.profesyonel': 'PROFESYONEL BAKIMLAR (Germaine de Capuccini)',
+      'item.vitc.title': 'Vitamin C',
+      'item.vitc.desc': 'Cilt tonunu aydınlatır, daha taze ve ışıltılı bir görünüm sağlar. 1–1,5 saat',
+      'item.wl.title': 'Wrink Less',
+      'item.wl.desc': 'Cilt elastikiyetini destekler, lifting etkisi sağlar ve ince çizgi ile kırışıklık görünümünün azalmasına yardımcı olur. 1–1,5 saat',
+      'item.sl.title': 'Selectum Lifting',
+      'item.sl.desc': 'Yoğun lifting ve yaşlanma karşıtı profesyonel bakım. 1–1,5 saat',
+
+      'cat.goz': 'GÖZ ÇEVRESİ VE KİRPİK',
+      'item.ik.title': 'İpek Kirpik',
+      'item.ik.desc': 'Uzun ve dolgun görünümlü kirpik uygulaması.',
+      'item.kl.title': 'Kaş ve Kirpik Laminasyon',
+      'item.kl.desc': 'Kaş ve kirpiklerin yukarı doğru şekillendirilerek belirginleştirilmesi.',
+      'item.fiyat_aliniz': 'Fiyat Alınız'
     },
     en: {
       'nav.services': 'Services',
@@ -392,26 +560,68 @@
 
       'detail.back': '← Back',
       'detail.title': 'Facial <em>Treatments</em>',
-      'detail.intro': 'Your skin is the most important reflection of your beauty. At Harmony Lux Beauty we combine natural ingredients with state-of-the-art devices. Contact us for pricing.',
+      'detail.intro': 'Your skin is the most important reflection of your beauty. At Harmony Lux Beauty we combine natural ingredients with state-of-the-art devices.',
 
-      'item1.title': 'Classic Facial',
-      'item1.desc': 'Deep cleansing, steam, mask and moisturising — a fundamental care protocol tailored to your skin type.',
-      'item2.title': 'Hydrafacial',
-      'item2.desc': 'Pore cleansing, peeling and intense hydration in a single session using Thalgo / Hydrafacial technology.',
-      'item3.title': 'Nose Blackhead Removal',
-      'item3.desc': 'Gentle professional extraction of blackheads from the nose area.',
-      'item4.title': 'Peeling Types',
-      'item4.desc': 'Chemical or enzymatic peeling suited to your skin type for dead cell removal and renewal.',
-      'item5.title': 'Face, Neck & Décolleté Cleansing',
-      'item5.desc': 'Comprehensive cleansing and care covering the face, neck and décolleté.',
-      'item6.title': 'Face Cleansing and Peeling',
-      'item6.desc': 'Deep pore cleansing combined with peeling for a matte, smooth complexion.',
-      'item7.title': 'Back Cleansing and Peeling',
-      'item7.desc': 'Deep cleansing and peeling targeting clogged pores and acne marks on the back.',
-      'item8.title': 'Acne Comprehensive Care',
-      'item8.desc': 'Specialised protocol with antibacterial cleansing, peeling and soothing mask for active acne.',
-      'item9.title': 'Post Acne Complex',
-      'item9.desc': 'Intensive skin tone evening and renewal treatment for acne scars and hyperpigmentation.'
+      'cat.yuz_temizleme': 'FACIAL CLEANSING',
+      'item.hf1.title': 'Hydrafacial (face)',
+      'item.hf1.desc': 'Mechanical / combined / Hydrafacial, selected by skin type.',
+      'item.hf2.title': 'Hydrafacial (face + neck)',
+      'item.hf2.desc': 'Mechanical / combined / Hydrafacial, selected by skin type.',
+      'item.hf3.title': 'Hydrafacial (face + neck + decollete)',
+      'item.hf3.desc': 'Mechanical / combined / Hydrafacial, selected by skin type.',
+      'item.hf4.title': 'Hydrafacial + facial massage',
+      'item.hf4.desc': 'Mechanical / combined / Hydrafacial, selected by skin type.',
+      
+      'cat.thalgo': 'THALGO CARE PROGRAMS AND MASKS',
+      'item.th1.title': 'Soin Fondamental de la Mer – Masque Oligo-Marin',
+      'item.th1.desc': 'Skin renewal and mineral support',
+      'item.th2.title': 'Hydra-Marine / Hydra-Soothing Mask',
+      'item.th2.desc': 'Deep hydration',
+      'item.th3.title': 'Silicium Lift Programme',
+      'item.th3.desc': 'Lifting and skin tightening',
+
+      'cat.sirt_temizligi': 'COMBINED BACK CLEANSING',
+      'item.ks1.title': 'Combined back cleansing',
+      'item.ks1.desc': 'Deep cleansing + mask suitable for skin type, Thalgo',
+
+      'cat.peeling': 'PEELING OPTIONS',
+      'item.gcyp.title': 'Germaine de Capuccini superficial peeling',
+      'item.gcyp.desc': '40–60 minutes',
+      'item.gcao.title': 'Germaine de Capuccini AOX Expert Lab',
+      'item.gcao.desc': '1 hour',
+
+      'cat.cihazli': 'DEVICE APPLICATIONS',
+      'item.yrf.title': 'Facial RF lifting',
+      'item.yrf.desc': '45–60 minutes',
+      'item.mam.title': 'Microcurrent + alginate mask',
+      'item.mam.desc': '60 minutes',
+      'item.irf.title': 'Needle-free RF + alginate mask',
+      'item.irf.desc': '60 minutes',
+
+      'cat.yuz_masaji': 'FACIAL MASSAGE',
+      'item.ym.title': 'Facial massage',
+      'item.ym.desc': '40–60 minutes',
+
+      'cat.kombo': 'COMBO APPLICATIONS',
+      'item.ymp.title': 'Facial massage + peeling',
+      'item.ymp.desc': '1–1.5 hours',
+      'item.ctym.title': 'Skin cleansing + facial massage',
+      'item.ctym.desc': '1.5–2 hours',
+
+      'cat.profesyonel': 'PROFESSIONAL CARE (Germaine de Capuccini)',
+      'item.vitc.title': 'Vitamin C',
+      'item.vitc.desc': 'Brightens skin tone, provides a fresher and radiant look. 1–1.5 hours',
+      'item.wl.title': 'Wrink Less',
+      'item.wl.desc': 'Supports skin elasticity, provides a lifting effect and helps reduce fine lines. 1–1.5 hours',
+      'item.sl.title': 'Selectum Lifting',
+      'item.sl.desc': 'Intensive lifting and anti-aging professional care. 1–1.5 hours',
+
+      'cat.goz': 'EYE CONTOUR & EYELASHES',
+      'item.ik.title': 'Silk Eyelashes',
+      'item.ik.desc': 'Application for long and full-looking eyelashes.',
+      'item.kl.title': 'Eyebrow and Eyelash Lamination',
+      'item.kl.desc': 'Shaping and defining eyebrows and eyelashes upwards.',
+      'item.fiyat_aliniz': 'Get Quote'
     },
     ru: {
       'nav.services': 'Услуги',
@@ -420,26 +630,68 @@
 
       'detail.back': '← Назад',
       'detail.title': 'Уход за <em>Кожей</em>',
-      'detail.intro': 'Кожа — главное отражение вашей красоты. В Harmony Lux Beauty мы используем натуральные ингредиенты и современное оборудование. Свяжитесь с нами для уточнения цен.',
+      'detail.intro': 'Кожа — главное отражение вашей красоты. В Harmony Lux Beauty мы используем натуральные ингредиенты и современное оборудование.',
 
-      'item1.title': 'Классический уход за кожей',
-      'item1.desc': 'Базовый протокол ухода: глубокое очищение, пар, маска и увлажнение под тип кожи.',
-      'item2.title': 'Hydrafacial уход',
-      'item2.desc': 'Очищение пор, пилинг и интенсивное увлажнение за один сеанс по технологии Thalgo / Hydrafacial.',
-      'item3.title': 'Очищение чёрных точек на носу',
-      'item3.desc': 'Мягкое профессиональное удаление чёрных точек в области носа.',
-      'item4.title': 'Виды пилинга',
-      'item4.desc': 'Химический или энзимный пилинг под тип кожи для удаления ороговевших клеток и обновления.',
-      'item5.title': 'Очищение лица, шеи и декольте',
-      'item5.desc': 'Комплексное очищение и уход, охватывающий лицо, шею и зону декольте.',
-      'item6.title': 'Очищение лица и пилинг',
-      'item6.desc': 'Глубокое очищение пор в сочетании с пилингом для матовой и гладкой кожи.',
-      'item7.title': 'Очищение спины и пилинг',
-      'item7.desc': 'Глубокое очищение и пилинг для устранения закупоренных пор и следов акне на спине.',
-      'item8.title': 'Комплексная процедура при акне',
-      'item8.desc': 'Специальный протокол с антибактериальным очищением, пилингом и успокаивающей маской.',
-      'item9.title': 'Постакне комплекс',
-      'item9.desc': 'Интенсивное выравнивание тона и обновление кожи при следах акне и гиперпигментации.'
+      'cat.yuz_temizleme': 'ОЧИЩЕНИЕ ЛИЦА',
+      'item.hf1.title': 'Hydrafacial (лицо)',
+      'item.hf1.desc': 'Механическая / комбинированная / Hydrafacial, подбирается по типу кожи.',
+      'item.hf2.title': 'Hydrafacial (лицо + шея)',
+      'item.hf2.desc': 'Механическая / комбинированная / Hydrafacial, подбирается по типу кожи.',
+      'item.hf3.title': 'Hydrafacial (лицо + шея + декольте)',
+      'item.hf3.desc': 'Механическая / комбинированная / Hydrafacial, подбирается по типу кожи.',
+      'item.hf4.title': 'Hydrafacial + массаж лица',
+      'item.hf4.desc': 'Механическая / комбинированная / Hydrafacial, подбирается по типу кожи.',
+      
+      'cat.thalgo': 'ПРОГРАММЫ И МАСКИ THALGO',
+      'item.th1.title': 'Soin Fondamental de la Mer – Masque Oligo-Marin',
+      'item.th1.desc': 'Обновление кожи и минеральная поддержка',
+      'item.th2.title': 'Hydra-Marine / Hydra-Soothing Mask',
+      'item.th2.desc': 'Глубокое увлажнение',
+      'item.th3.title': 'Silicium Lift Programme',
+      'item.th3.desc': 'Лифтинг и подтяжка кожи',
+
+      'cat.sirt_temizligi': 'КОМБИНИРОВАННОЕ ОЧИЩЕНИЕ СПИНЫ',
+      'item.ks1.title': 'Комбинированное очищение спины',
+      'item.ks1.desc': 'Глубокое очищение + маска по типу кожи, Thalgo',
+
+      'cat.peeling': 'ВАРИАНТЫ ПИЛИНГА',
+      'item.gcyp.title': 'Поверхностный пилинг Germaine de Capuccini',
+      'item.gcyp.desc': '40–60 минут',
+      'item.gcao.title': 'Germaine de Capuccini AOX Expert Lab',
+      'item.gcao.desc': '1 час',
+
+      'cat.cihazli': 'АППАРАТНАЯ КОСМЕТОЛОГИЯ',
+      'item.yrf.title': 'RF-лифтинг лица',
+      'item.yrf.desc': '45–60 минут',
+      'item.mam.title': 'Микротоки + альгинатная маска',
+      'item.mam.desc': '60 минут',
+      'item.irf.title': 'Безыгольный RF + альгинатная маска',
+      'item.irf.desc': '60 минут',
+
+      'cat.yuz_masaji': 'МАССАЖ ЛИЦА',
+      'item.ym.title': 'Массаж лица',
+      'item.ym.desc': '40–60 минут',
+
+      'cat.kombo': 'КОМБИНИРОВАННЫЕ ПРОЦЕДУРЫ',
+      'item.ymp.title': 'Массаж лица + пилинг',
+      'item.ymp.desc': '1–1,5 часа',
+      'item.ctym.title': 'Чистка лица + массаж лица',
+      'item.ctym.desc': '1,5–2 часа',
+
+      'cat.profesyonel': 'ПРОФЕССИОНАЛЬНЫЙ УХОД (Germaine de Capuccini)',
+      'item.vitc.title': 'Vitamin C',
+      'item.vitc.desc': 'Осветляет тон кожи, придает свежий и сияющий вид. 1–1,5 часа',
+      'item.wl.title': 'Wrink Less',
+      'item.wl.desc': 'Поддерживает эластичность кожи, обеспечивает лифтинг-эффект. 1–1,5 часа',
+      'item.sl.title': 'Selectum Lifting',
+      'item.sl.desc': 'Интенсивный лифтинг и антивозрастной уход. 1–1,5 часа',
+
+      'cat.goz': 'УХОД ЗА ГЛАЗАМИ И РЕСНИЦАМИ',
+      'item.ik.title': 'Шелковые ресницы',
+      'item.ik.desc': 'Наращивание для длинных и объемных ресниц.',
+      'item.kl.title': 'Ламинирование бровей и ресниц',
+      'item.kl.desc': 'Придание формы и выразительности бровям и ресницам.',
+      'item.fiyat_aliniz': 'Уточняйте цену'
     }
   };
 
